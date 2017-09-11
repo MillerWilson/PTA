@@ -1,7 +1,12 @@
 /*mobile resize*/
 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"
 <style>
-
+header{
+   background-color: orangered;
+   background-size: auto;
+   text-align: center;
+   text-decoration-color: black;
+}
     /*screen size first attempt will change in future*/
     @media only screen(max-width 500px)
     

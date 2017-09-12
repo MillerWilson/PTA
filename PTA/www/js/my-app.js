@@ -2,6 +2,10 @@
 var myApp = new Framework7();
 
 //const alasql = require('alasql');
+$(document).on("ready", function()
+{
+	databaseHandler.createDatabase();
+});
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -16,21 +20,22 @@ var mainView = myApp.addView('.view-main', {
 });
 
 // Handle Cordova Device Ready Event
-$$(document).on('deviceready', function() {
+$$(document).on('deviceready', function() 
+{
    
     console.log("Device is still ready");
-});
- 
+}				)
+
 
 var question = 
     {
-        prompt = "";
-        answer1 ="";
-        answer2 = "";
-        answer3 = "";
-        correctAnswer = "";
-        explanation = "";
-    }
+    	prompt: "",
+        answer1:"",
+        answer2: "",
+        answer3:"",
+        correctAnswer: "",
+        explanation: ""
+    };
 
 
 function createdb()

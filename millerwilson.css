@@ -62,11 +62,13 @@ button1, button2 {
 /*correct and incorrect answer i might remove*/
     /*incorect answers */
     a:active{
-        background-color: red
+        background-color: red;
+            color: darkred;
     }
     /*correct answers*/
     a:active {
         background-color: green;
+        color: darkgreen;
     }
 body{
     background-color: orangered;

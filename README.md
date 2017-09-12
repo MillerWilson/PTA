@@ -7,18 +7,18 @@ The PTA is used to help perspective test takers prepare for a whole host tests p
 In the PTA, a user’s personal mobile device is used to provide portability and convince. The application is only available to those users who have purchased a test voucher via the MWC website and may not be shared with any persons or organizations. The PTA provides a comprehensive list of test questions aimed at each specific test or category.
 
 # Coding Conventions
-## Coding conventions are style guidelines for programming. They typically cover:
+## These coding conventions are guidelines for programming. They cover:
 Naming and declaration rules for variables and functions.
 Rules for the use of white space, indentation, and comments.
 Programming practices and principles
 ### Coding conventions secure quality:
 •	Improves code readability
 •	Make code maintenance easier
-Coding conventions can be documented rules for teams to follow, or just be your individual coding practice.
+These coding conventions are documented rules for teams to follow.
 This page describes the general JavaScript code conventions used by W3Schools.
 You should also read the next chapter "Best Practices", and learn how to avoid coding pitfalls.
 ## Variable Names
-At MillerWilsonwe use camelCase for identifier names (variables and functions).
+At MillerWilson we use camelCase for identifier names (variables and functions).
 All names start with a letter.
 At the bottom of this page, you will find a wider discussion about naming rules.
 firstName = "John";

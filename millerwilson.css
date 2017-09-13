@@ -42,21 +42,26 @@ header{
     @media only screen(max-width 500px)
    
        /*question format*/ 
-h1{
+h2{
     text-decoration: underline;
+    font-family: "Times New Roman", Times, sefif;
 }
 /*answer format*/
 h3{
-    text-indent: 50px
+    text-indent: 50px;
+    font-family: "Times New Roman", Times, sefif;
 }
 h4{
-    text-indent: 50px
+    text-indent: 50px;
+    font-family: "Times New Roman", Times, sefif;
 }
 h5{
-    text-indent: 50px
+    text-indent: 50px;
+    font-family: "Times New Roman", Times, sefif;
 }
 h6{
-    text-indent: 50px
+    text-indent: 50px;
+    font-family: "Times New Roman", Times, sefif;
 }
     .button {
         background-color: orangered;
@@ -104,4 +109,4 @@ p {
 }
 
     </style>
-/*https://www.youtube.com/watch?v=jtiK-cnDoMk this is a great turtorial for brackets*/
+

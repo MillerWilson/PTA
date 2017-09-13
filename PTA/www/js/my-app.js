@@ -5,6 +5,7 @@ var myApp = new Framework7();
 $(document).on("ready", function()
 {
 	databaseHandler.createDatabase();
+	questionTableHandler.addQuestionToTable("asdfa", "dd", "dd", "dd","dd","a1","I said so");
 });
 
 

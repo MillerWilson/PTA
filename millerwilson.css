@@ -1,6 +1,11 @@
 /*mobile resize*/
 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"
 <style>
+/*mobile first design*/
+[class * = "col-"]{
+    width: 100%;
+}
+@media only screen and (min-width:700px)
 /*setting the background*/
 background: #ffffff url ("millerwilsonpicture.png") no-repeat right top;
 img{
@@ -91,25 +96,25 @@ header{
     @media only screen(max-width 500px)
    
        /*question format*/ 
-h2{
+.header{
     text-decoration: underline;
     font-family: "Times New Roman", Times, sefif;
 }
 /*answer format*/
 h3{
-    text-indent: 50px;
+    text-indent: inherit;
     font-family: "Times New Roman", Times, sefif;
 }
 h4{
-    text-indent: 50px;
+    text-indent: inherit;
     font-family: "Times New Roman", Times, sefif;
 }
 h5{
-    text-indent: 50px;
+    text-indent: inherit;
     font-family: "Times New Roman", Times, sefif;
 }
 h6{
-    text-indent: 50px;
+    text-indent: inherit;
     font-family: "Times New Roman", Times, sefif;
 }
     .button {

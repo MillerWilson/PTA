@@ -1,12 +1,11 @@
 // Initialize app
 var myApp = new Framework7();
 
-//const alasql = require('alasql');
+
+
 $(document).on("ready", function()
 {
-	databaseHandler.createDatabase();
-    questionTableHandler.addQuestionToTable('asdfa', 'dd', 'dd', 'dd','dd','a2','I said so','ceh');
-    questionTableHandler.selectQuestions();
+	createdb();
 	
 });
 
@@ -40,9 +39,18 @@ var question =
     };
 
 
+function displayRecord(results)
+{
+    var test = results.rows.length;
+    console.log(test);
+}
+
 function createdb()
 {
     "use strict";
+    databaseHandler.createDatabase();
+    questionTableHandler.addQuestionToTable('asdfa', 'dd', 'dd', 'dd','dd','a2','I said so','ceh');
+    questionTableHandler.selectQuestions(displayRecord);
 }
 
 function seedNumber() // seeds number

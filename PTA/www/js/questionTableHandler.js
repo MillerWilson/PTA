@@ -22,19 +22,20 @@ var questionTableHandler=
 
 		);// end transaction
 	},// end addQuestionToTable function
-    selectQuestions: function()
+    selectQuestions: function(displayRecord)
 	{
-		databaseHandler.db.transaction(function(tx)
+		databaseHandler.db.readTransaction(function(tx)
 		{
-			tx.executeSql("SELECT * FROM Questions",
-                {
-                    //console.log(results);
-                },// end condition when success
-                function(tx,error)
+			tx.executeSql("SELECT * FROM Questions",[],
+                function(tx, results)
 				{
-					console.log("selection error" +error.message);
-				}// end selection error report
-				);//end execute statement
+					displayRecord(results);
+				},
+                function(tx, error)
+                {
+                    console.log("selection error" +error.message);
+                } // end selection error report
+			);//end execute statement
 		}, // end sql piece 
 		function(error)
 		{

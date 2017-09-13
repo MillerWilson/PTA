@@ -1,6 +1,9 @@
 /*mobile resize*/
 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"
 <style>
+/*setting the background*/
+background: #ffffff url ("millerwilsonpicture.png") no-repeat right top;
+/*slider*/
 #slidecontainer{
     width: 100%;
 }
@@ -25,10 +28,10 @@
     width: auto;
     height: auto;
     border: 0;
-    background: url
-        ('contrasticon.png');
+    background: url ('contrasticon.png');
     cursor: pointer;
 }
+/*designing the header*/
 header{
    background-color: orangered;
    background-size: auto;
@@ -37,7 +40,24 @@ header{
 }
     /*screen size first attempt will change in future*/
     @media only screen(max-width 500px)
-    
+   
+       /*question format*/ 
+h1{
+    text-decoration: underline;
+}
+/*answer format*/
+h3{
+    text-indent: 50px
+}
+h4{
+    text-indent: 50px
+}
+h5{
+    text-indent: 50px
+}
+h6{
+    text-indent: 50px
+}
     .button {
         background-color: orangered;
         border: none;

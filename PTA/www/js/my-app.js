@@ -5,14 +5,14 @@ var myApp = new Framework7();
 $(document).on("ready", function()
 {
 	databaseHandler.createDatabase();
-	questionTableHandler.addQuestionToTable("asdfa", "dd", "dd", "dd","dd","a1","I said so");
+    questionTableHandler.addQuestionToTable('asdfa', 'dd', 'dd', 'dd','dd','a2','I said so','ceh');
+    questionTableHandler.selectQuestions();
+	
 });
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
-
-
 
 // Add view
 var mainView = myApp.addView('.view-main', {
@@ -24,6 +24,7 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() 
 {
    
+    
     console.log("Device is still ready");
 }				)
 

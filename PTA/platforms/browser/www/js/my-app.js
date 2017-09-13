@@ -5,9 +5,7 @@ var myApp = new Framework7();
 
 $(document).on("ready", function()
 {
-	databaseHandler.createDatabase();
-    questionTableHandler.addQuestionToTable('asdfa', 'dd', 'dd', 'dd','dd','a2','I said so','ceh');
-    questionTableHandler.selectQuestions(displayRecord);
+	createdb();
 	
 });
 
@@ -50,6 +48,9 @@ function displayRecord(results)
 function createdb()
 {
     "use strict";
+    databaseHandler.createDatabase();
+    questionTableHandler.addQuestionToTable('asdfa', 'dd', 'dd', 'dd','dd','a2','I said so','ceh');
+    questionTableHandler.selectQuestions(displayRecord);
 }
 
 function seedNumber() // seeds number

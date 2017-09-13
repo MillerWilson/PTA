@@ -3,6 +3,55 @@
 <style>
 /*setting the background*/
 background: #ffffff url ("millerwilsonpicture.png") no-repeat right top;
+img{
+    opacity: 0.6;
+    filter: drop-shadow(opacity(50));
+}
+/*dropdown navigation menu*/
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: orangered;
+}
+li{
+    float: left;
+}
+li a, .dropbtn{
+    display: inline-block;
+    /*color can change*/
+    color: gray;
+    padding: inherit;
+    text-decoration: none;
+}
+li a, active,.dropdown:active .dropbtn{
+    background-color: darkred;
+}
+li .dropdown{
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position:absolute;
+    background-color: darkred;
+    min-width: inherit;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: inherit;
+}
+.dropdown-content a {
+    color: black;
+    padding:inherit;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:active{
+    background-color: orangered;
+}
+.dropdown:active .dropdown-content{
+    display: block;
+}
 /*slider*/
 #slidecontainer{
     width: 100%;
@@ -86,11 +135,19 @@ button1, button2 {
 }
 /*correct and incorrect answer i might remove*/
     /*incorect answers */
+.incorect{
+    background-color: red;
+    color: darkred;
+}
     a:active{
         background-color: red;
-            color: darkred;
+        color: darkred;
     }
     /*correct answers*/
+.correct{
+    background-color: green;
+    color: darkgreen;
+}
     a:active {
         background-color: green;
         color: darkgreen;

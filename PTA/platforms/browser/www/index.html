@@ -37,6 +37,9 @@
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
+    <p onclick="myFunction(this, 'red')">Click me to change my text color.</p>
+
+
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
@@ -79,7 +82,7 @@
                             <textarea id= 'answer2'></textarea>
                             <textarea id= 'answer3'></textarea>
                             <textarea id= 'explanation'></textarea>
-                            <button id= "sq">sql Stuff</button>
+                            <button id= 'sq'>sql Stuff</button>
                             <a href="about.html">About app</a>
                         </div>
                     </div>
@@ -95,7 +98,7 @@
             </div>
         </div>
     </div>
-   <!-- <script type="text/javascript" src="cordova.js"></script> -->
+   <script type="text/javascript" src="cordova.js"></script>
      <script type="text/javascript" charset="utf-8">
             $(document).ready(function () {
                document.getElementById('prompt').innerHTML ="asfasdf";
@@ -107,6 +110,12 @@
     <script type="text/javascript" src="js/questionTableHandler.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
 
+    <script>
+    function myFunction(elmnt,clr) {
+    elmnt.style.color = clr;
+        document.getElementById('prompt').innerHTML = "Asdfasfd";
+    
+}</script>
     
 </body>
 

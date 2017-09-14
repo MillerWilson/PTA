@@ -1,32 +1,31 @@
 // Initialize app
 var myApp = new Framework7();
- 
-
-docuent.getElementById('sq').onclick()=createdb;
-
-    
-
-
-
-
-$(document).on("ready", function() // seems to only run on web browser, not on devices
-{
-	createdb();
-});
-
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
-
 // Add view
-var mainView = myApp.addView('.view-main', {
+var mainView = myApp.addView('.view-main', 
+{
     // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true
 });
 
+document.getElementById('sq').onclick = createdb;
+    
+    
+    
+$(document).on("ready", function() // seems to only run on web browser, not on devices
+{
+});
+
+
+//function (){
+  //  document.getElementById('prompt').textContent = "Asdfasfd";}
+
+
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() 
 {
-
+    
 });// end on device ready
 
 
@@ -41,13 +40,15 @@ var question =
     };  
 
 
+
 function displayRecord(results)
 {
+    document.getElementById('prompt').textContent = "Asdfasfd";
     var test = results.rows.length;
     console.log(test);
     for (i=0; i<test; test++)
         {
-            document.getElementById('prompt').innerHTML ="asfasdf";
+          document.getElementById('prompt').textContent = "Asdfasfd";
             console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");   
         }
     
@@ -56,9 +57,16 @@ function displayRecord(results)
 function createdb()
 {
     "use strict";
-    databaseHandler.createDatabase();
-    questionTableHandler.addQuestionToTable('asdfa', 'dd', 'dd', 'dd','dd','a2','I said so','ceh');
-    questionTableHandler.selectQuestions(displayRecord);
+    try
+    {
+        databaseHandler.createDatabase();
+        questionTableHandler.addQuestionToTable('asdfa', 'dd', 'dd', 'dd','dd','a2','I said so','ceh');
+        questionTableHandler.selectQuestions(displayRecord);
+    }
+    catch (err)
+        {
+            console.log("something bad happened");
+        }
 }
 
 function seedNumber() // seeds number

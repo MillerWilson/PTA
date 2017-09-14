@@ -3,11 +3,10 @@ var databaseHandler =
 	db: null,
 	createDatabase: function() // creates fuction to add the databaseHandler
 	{
-		this.db = window.openDatabase("questions.db", 1.0,"question database", 1000000); // names database and establishes size
+		this.db = window.openDatabase("..\www\js\questions.db", 1.0,"question database", 1000000); // names database and establishes size
 		this.db.transaction(
 			function(tx)
 			{
-                tx.executeSql("drop table if exists Questions");
 				// creates the table that we will use for the questions
 				tx.executeSql( "CREATE TABLE if not exists Questions (ID integer primary key,inquisition varchar(255) NOT NULL, a1 varchar(255) NOT NULL, a2 varchar(255) NOT NULL,a3 varchar(255),a4 varchar(255), correct varchar(2) NOT NULL, Explanation varchar(255) NOT NULL, type varchar(255) NOT NULL);", [],
 					function(tx, results) {}, function(tx, error)

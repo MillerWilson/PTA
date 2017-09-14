@@ -1,7 +1,24 @@
 // Initialize app
 var myApp = new Framework7();
+<<<<<<< HEAD
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
+=======
+
+//const alasql = require('alasql');
+$(document).on("ready", function()
+{
+	databaseHandler.createDatabase();
+	questionTableHandler.addQuestionToTable("asdfa", "dd", "dd", "dd","dd","a1","I said so");
+});
+
+
+// If we need to use custom DOM library, let's save it to $$ variable:
+var $$ = Dom7;
+
+
+
+>>>>>>> parent of d0eeee0... updated plugin stuff
 // Add view
 var mainView = myApp.addView('.view-main', 
 {
@@ -25,8 +42,14 @@ $(document).on("ready", function() // seems to only run on web browser, not on d
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() 
 {
+<<<<<<< HEAD
     
 });// end on device ready
+=======
+   
+    console.log("Device is still ready");
+}				)
+>>>>>>> parent of d0eeee0... updated plugin stuff
 
 
 var question = 

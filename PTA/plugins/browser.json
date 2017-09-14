@@ -18,14 +18,7 @@
         },
         "cordova-plugin-sqlite-2": {
             "PACKAGE_NAME": "com.PTA.MillerWilson"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.PTA.MillerWilson"
         }
     },
-    "dependent_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.PTA.MillerWilson"
-        }
-    }
+    "dependent_plugins": {}
 }

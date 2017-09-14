@@ -1,11 +1,17 @@
 // Initialize app
 var myApp = new Framework7();
-$(document).ready(function () { document.getElementById('prompt').innerHTML ="asfasdf"; }
+ 
 
-$(document).on("ready", function()
+docuent.getElementById('sq').onclick()=createdb;
+
+    
+
+
+
+
+$(document).on("ready", function() // seems to only run on web browser, not on devices
 {
 	createdb();
-	
 });
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -20,7 +26,7 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() 
 {
-    document.getElementById('prompt').innerHTML ="asfasdf";
+
 });// end on device ready
 
 
@@ -32,17 +38,17 @@ var question =
         answer3:"",
         correctAnswer: "",
         explanation: ""
-    };
+    };  
 
 
 function displayRecord(results)
 {
-  //  document.getElementById('prompt').innerHTML ="asfasdf";
     var test = results.rows.length;
     console.log(test);
     for (i=0; i<test; test++)
         {
-          console.log(test);   
+            document.getElementById('prompt').innerHTML ="asfasdf";
+            console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");   
         }
     
 }

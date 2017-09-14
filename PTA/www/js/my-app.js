@@ -1,14 +1,12 @@
 // Initialize app
 var myApp = new Framework7();
-
-
+$(document).ready(function () { document.getElementById('prompt').innerHTML ="asfasdf"; }
 
 $(document).on("ready", function()
 {
 	createdb();
 	
 });
-
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -22,10 +20,8 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() 
 {
-   
-    
-    console.log("Device is still ready");
-}				)
+    document.getElementById('prompt').innerHTML ="asfasdf";
+});// end on device ready
 
 
 var question = 
@@ -41,8 +37,14 @@ var question =
 
 function displayRecord(results)
 {
+  //  document.getElementById('prompt').innerHTML ="asfasdf";
     var test = results.rows.length;
     console.log(test);
+    for (i=0; i<test; test++)
+        {
+          console.log(test);   
+        }
+    
 }
 
 function createdb()

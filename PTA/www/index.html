@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Include jQuery Mobile stylesheets -->
-<link rel="stylesheet" href="..\www\js\jquerymobile\jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="lib\jquerymobile\jquery.mobile-1.4.5.min.css">
 
 <!-- Include the jQuery library -->
 <script src="..\www\js\jquerymobile\jquery-2.2.4.min.js"></script>
@@ -74,6 +74,11 @@
                         <div class="content-block">
                             <p>Page content goes here</p>
                             <!-- Link to another page -->
+                            <textarea id= 'prompt'></textarea>
+                            <textarea id= 'answer1'></textarea>
+                            <textarea id= 'answer2'></textarea>
+                            <textarea id= 'answer3'></textarea>
+                            <textarea id= 'explanation'></textarea>
                             <button id= "sq">sql Stuff</button>
                             <a href="about.html">About app</a>
                         </div>
@@ -90,9 +95,14 @@
             </div>
         </div>
     </div>
-
    <!-- <script type="text/javascript" src="cordova.js"></script> -->
-    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+     <script type="text/javascript" charset="utf-8">
+            $(document).ready(function () {
+               document.getElementById('prompt').innerHTML ="asfasdf";
+            });
+        </script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js">
+</script>
     <script type="text/javascript" src="js/databaseHandler.js"></script>
     <script type="text/javascript" src="js/questionTableHandler.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>

@@ -15,8 +15,33 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 });
+function myFunction() {"
+    var y = document.getElementById("1234").value;
+}
+function myFunction(){
+    var x = document.getElementById("vouchers").href;
 
-
+function myFunction(){
+    var x = document.getElementById("test").href;
+}
+function myFunction(){
+    var x = document.getElementById("test1").href;
+}
+function myFunction(){
+    var x = document.getElementById("test2").href;
+} 
+function myFunction(){
+    var x = document.getElementById("test3").href;
+}
+function myFunction(){
+    var x = document.getElementById("test4").href;
+}
+function myFunction(){
+    var x = document.getElementById("test5").href;
+}
+function myFunction(){
+    var x = document.getElementById("test6").href;
+}
 // Now we need to run the code that will be executed only for About page.
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):

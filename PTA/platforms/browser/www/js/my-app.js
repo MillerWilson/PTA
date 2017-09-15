@@ -16,7 +16,13 @@ $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 });
 function myFunction() {"
-    var y = document.getElementById("1234").value;
+    var y = document.getElementById("mypass").value;
+    if(from.mypass.value == "1234")
+        {window.open("/Users/Student/Documents/pta/PTA/www/home.html")}
+    else {
+        alert("the voucher does not match")
+    }
+   
 }
 function myFunction(){
     var x = document.getElementById("vouchers").href;

@@ -32,7 +32,11 @@ function populateDB(tx) {
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
 }
-
+var slider = document.getElementById ("myrange");
+var output = document.getElementById ("d")
+slider.oninput = function(){
+    output.innerHTML = this.value;
+}
 // Transaction error callback
 function errorCB(err) {
     alert("Error processing SQL: " + err);

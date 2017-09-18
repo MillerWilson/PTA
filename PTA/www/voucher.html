@@ -60,7 +60,17 @@
                              <h3><p>Welcome to the MillerWilson Practice Testing Application (PTA)!</p></h3>
                             <p>The PTA is used to help perspective test takers prepare for a whole host tests prior to taking it. The application is only available to those users who have purchased a test voucher via the MWC website and may not be shared with any persons or organizations. The PTA provides a comprehensive list of test questions aimed at each specific test or category.</p>
                             <p>Please enter a valid voucher code:</p> 
-                            <form><input type="text" name="vouchCode" ></form>
+                            <div>               <!--i am going to do the css here <style> .button{background-color: orangered;}  
+                                </style>-->
+                           <form action = "/Users/Student/Documents/pta/PTA/www/home.html" method="get">
+                               voucher:<input type ="password" password = "voucher"><br><button type ="submit" value = "submit"> Submit</button>
+                               <button type ="Reset" value="Reset">Reset</button>     
+                            </form>
+                                
+                               <form action = "http://www.millerwilson.com/index.html" method="get">
+                                   <button type ="click" value = "click"> vouchers here
+                                   </button> </form>    
+                            </div>
                         </div>
                         <div>
                             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -73,8 +83,8 @@
             <div class="toolbar">
                 <div class="toolbar-inner">
                     <!-- Toolbar links -->
-                    <a href="http://www.millerwilson.com/" class="link">Get a Voucher Here!</a>
                     
+                
                 </div>
             </div>
         </div>

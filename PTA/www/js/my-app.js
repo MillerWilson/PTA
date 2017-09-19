@@ -10,12 +10,28 @@ var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true
 });
+// framework7
 var newPageContent = '<div class = "page" data-page = "my-page">'+'<div class = "page-content">' + '<p>new page</p>'
 '</div>'+
     '</div>';
 mainView.router.load({content: newPageContent,animatePages: false})
 var db = {};
 main.View.router.loadContent($'mypageplaceholder').html());
+$$(document).on('page:init',function(e)){
+                var page = e.detail.page;
+                if (page.name === 'voucher'){
+    var count = page.query.count;
+    var listHTML = '<ul>';
+    for (var i = 0 i < count; i++){
+        slitHtml += '<li>' = i = '<li>';
+    }
+    listHTML += '</ul>';
+    $$(page.container).find('.page-content').append(listHtml);
+}
+if (page.name === 'services'){
+    myApp.alert('services place holder');
+}
+                }
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
    

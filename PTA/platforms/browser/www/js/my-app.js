@@ -11,7 +11,6 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 var db = {};
-
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
    
@@ -31,8 +30,21 @@ function populateDB(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
-}
-
+// slider bar
+    function my function(){
+        var a = document.getElementById ("myslider").step;
+        document.getElementById ("dem").innerHTML = a;
+        rangeObject.value;
+    }
+    var slider = document.getElementById("myslider");
+    var output = document.getElementById("dem");
+    output.innerHTML = slider.value;
+    
+    slider.oninput = function(){
+        output.innerHTML = this.value;
+    }
+    
+    
 // Transaction error callback
 function errorCB(err) {
     alert("Error processing SQL: " + err);

@@ -16,10 +16,7 @@
     <!-- Your app title -->
     <title>Test Page</title>
 
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
-        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
-     -->
-
+    
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
@@ -48,13 +45,11 @@
             <!-- Top Navbar-->
             <div class="navbar">
                 <div class="navbar-inner">
+                    <div class="left"></div>
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                     <div class="center sliding">MillerWilson PTA</div>
                     <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
+                       
                         <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                     </div>
                 </div>
@@ -67,7 +62,8 @@
                     <div class="page-content">
                         <div class="content-block">
                             <center>
-                                <p>This is an example question. </p><br>
+                                <!--This block contains the form for the Q's & A's-->
+                                <p>This is an example question. Under are the sample answers. </p><br>
                                 <form>
                                     <input type="radio" name="choice" value="A"> ANS 1<br><br>
                                     <input type="radio" name="choice" value="B"> ANS 2<br><br>
@@ -84,8 +80,10 @@
             <div class="toolbar">
                 <div class="toolbar-inner">
                     <!-- Toolbar links -->
+                    
+                    <!--Navigation Buttons-->
                     <button class="link">Previous</button>
-                    <button class="link">Next</button>
+                    <button id ="Next/Submit">Next</button>
                 </div>
             </div>
         </div>

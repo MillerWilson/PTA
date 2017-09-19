@@ -10,8 +10,12 @@ var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true
 });
+var newPageContent = '<div class = "page" data-page = "my-page">'+'<div class = "page-content">' + '<p>new page</p>'
+'</div>'+
+    '</div>';
+mainView.router.load({content: newPageContent,animatePages: false})
 var db = {};
-
+main.View.router.loadContent($'mypageplaceholder').html());
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
    

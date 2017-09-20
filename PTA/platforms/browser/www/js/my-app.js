@@ -46,29 +46,41 @@ function myFunction() {
         var x = document.getElementById("test3").href;
     }
 
- 
-    }
-    // Now we need to run the code that will be executed only for About page.
 
-    // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-    myApp.onPageInit('about', function (page) {
-        // Do something here for "about" page
+}
+// Now we need to run the code that will be executed only for About page.
 
-    });
+// Option 1. Using page callback for page (for "about" page in this case) (recommended way):
+myApp.onPageInit('about', function (page) {
+    // Do something here for "about" page
 
-    // Option 2. Using one 'pageInit' event handler for all pages:
-    $$(document).on('pageInit', function (e) {
-        // Get page data from event data
-        var page = e.detail.page;
+});
 
-        if (page.name === 'about') {
-            // Following code will be executed for page with data-page attribute equal to "about"
-            myApp.alert('Here comes About page');
-        }
-    });
+// Option 2. Using one 'pageInit' event handler for all pages:
+$$(document).on('pageInit', function (e) {
+    // Get page data from event data
+    var page = e.detail.page;
 
-    // Option 2. Using live 'pageInit' event handlers for each page
-    $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
+    if (page.name === 'about') {
         // Following code will be executed for page with data-page attribute equal to "about"
         myApp.alert('Here comes About page');
-    });
+    }
+});
+
+// Option 2. Using live 'pageInit' event handlers for each page
+$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
+    // Following code will be executed for page with data-page attribute equal to "about"
+    myApp.alert('Here comes About page');
+});
+
+//this allows the pickers to work on the mode pages
+var pickerDevice = myApp.picker({
+    input: '#picker-device', 
+    closeByOutsideClick: true,
+    cols: [
+        {
+            textAlign: 'center',
+            values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+        }
+    ]
+});

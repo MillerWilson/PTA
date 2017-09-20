@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
-    <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
+
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
@@ -52,7 +44,7 @@
     </style>
 </head>
 
-<body>
+<body class="theme-orange">
 
 
     <!-- Views -->
@@ -63,13 +55,15 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="left">
-                         <!--<a href="#" class="back link">-->
-                            <i class="icon icon-back"></i>
-                            <p><a href= "home.html"> Back</a></p>
-                       </div>
+                        <!--<a href="#" class="back link">-->
+                        <i class="icon icon-back"></i>
+                        <p><a href="home.html"> Back</a></p>
+                    </div>
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding"><h3>Mode Selector</h3></div>
-                     <div class="right"></div>
+                    <div class="center sliding">
+                        <h3>Mode Selector</h3>
+                    </div>
+                    <div class="right"></div>
                 </div>
             </div>
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
@@ -82,31 +76,45 @@
                             <h3><i>Please select a testing mode.</i></h3>
                             <p>"<b>Test Mode</b>" features 25 questions. At the end of the test, your score will be revealed along with the questions and the corrected answers.</p>
                             <p>
-                                In "<b>Study Mode</b>", after you select the amount of questions that you wish to receive, you may start. The moment after you pick an answer, if correct, appear in green; if incorrect, it will appear in red.   
+                                In "<b>Study Mode</b>", after you select the amount of questions that you wish to receive, you may start. The moment after you pick an answer, if correct, appear in green; if incorrect, it will appear in red.
                             </p>
-                           <center> <div>
-                               <button id="testMbttn"><b>Test Mode2</b></button>
+                            <center>
                                 <div>
-                                    <br><br>
-                                    <button id= "studyMbttn"><b>Study Mode</b></button></div>
-                               <div>
-                               <br>
-                       <input type="range" id="myRange" value="25">
-  
-                               </div>
-                               <div>
-                                   <br><br>
-                                   <button id="go"> <i>Go</i></button>
-                               </div>
-                               
-                               </div></center>
-                            
-                            
+                                    <button id="testMbttn"><b>Test Mode2</b></button>
+                                    <div>
+                                        <br><br>
+                                        <button id="studyMbttn"><b>Study Mode</b></button>
+                                    </div>
+                                    
+                                    <div class="content-block-title">Choose amount of questions</div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <input type="text" placeholder="1 - 25" readonly id="picker-device">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div>
+                                        <br><br>
+                                        <button id="go"> <a href="testPAge.html"><i>Go</i></a></button>
+                                    </div>
+
+                                </div>
+                            </center>
+
+
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 

@@ -6,7 +6,7 @@
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * gap: is required only on iOS (when using UIWebView) and is needed forghgghhgghgh JS->native communication
             * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="theme-orange">
+<body>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
@@ -55,7 +55,7 @@
             <!-- Top Navbar-->
             <div class="navbar">
                 <div class="navbar-inner">
-                    <div class="left"></div>
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                     <div class="center sliding">MillerWilson PTA</div>
                     <div class="right">
                         <!--

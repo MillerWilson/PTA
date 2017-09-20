@@ -25,21 +25,7 @@
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
-    <style> 
-        .button {
-            background-color: orangered;
-            border: none;
-            color: black;
-            padding: inherit;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 10px;
-            margin: inherit;
-            cursor: pointer;
-        }
-    </style>
-    </head>
+</head>
 
 <body>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
@@ -74,16 +60,16 @@
                              <h3><p>Welcome to the MillerWilson Practice Testing Application (PTA)!</p></h3>
                             <p>The PTA is used to help perspective test takers prepare for a whole host tests prior to taking it. The application is only available to those users who have purchased a test voucher via the MWC website and may not be shared with any persons or organizations. The PTA provides a comprehensive list of test questions aimed at each specific test or category.</p>
                             <p>Please enter a valid voucher code:</p> 
-                            <div>                
+                            <div>               <!--i am going to do the css here <style> .button{background-color: orangered;}  
+                                </style>-->
                            <form action = "/Users/Student/Documents/pta/PTA/www/home.html" method="get">
-                               voucher:<input type ="password" id = "mypass"><br><button type ="submit" value = "submit"> Submit</button>
+                               voucher:<input type ="password" password = "voucher"><br><button type ="submit" value = "submit"> Submit</button>
                                <button type ="Reset" value="Reset">Reset</button>     
                             </form>
-                                <div>
-                                <p><a href = http://www.millerwilson.com/index.html>vouchers</p>
-                                <div>    
-                                </div>
                                 
+                               <form action = "http://www.millerwilson.com/index.html" method="get">
+                                   <button type ="click" value = "click"> vouchers here
+                                   </button> </form>    
                             </div>
                         </div>
                         <div>

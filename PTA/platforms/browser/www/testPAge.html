@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
-    <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed forghgghhgghgh JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
+
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
@@ -22,12 +14,9 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Your app title -->
-    <title>My App</title>
+    <title>Test Page</title>
 
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
-        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
-     -->
-
+    
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
@@ -44,7 +33,8 @@
     <div class="panel panel-right panel-reveal">
         <div class="content-block">
             <p>Settings</p>
-            <p >about</p>
+            <p>about</p>
+
         </div>
     </div>
 
@@ -55,13 +45,11 @@
             <!-- Top Navbar-->
             <div class="navbar">
                 <div class="navbar-inner">
+                    <div class="left"></div>
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                     <div class="center sliding">MillerWilson PTA</div>
                     <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
+                       
                         <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                     </div>
                 </div>
@@ -69,13 +57,21 @@
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
+                <div data-page="testPage" class="page">
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
-                            <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+                            <center>
+                                <!--This block contains the form for the Q's & A's-->
+                                <p>This is an example question. Under are the sample answers. </p><br>
+                                <form>
+                                    <input type="radio" name="choice" value="A"> ANS 1<br><br>
+                                    <input type="radio" name="choice" value="B"> ANS 2<br><br>
+                                    <input type="radio" name="choice" value="C"> ANS 3<br><br>
+                                    <input type="radio" name="choice" value="D"> ANS 4
+                                </form><br>
+                                <button>Submit Answer</button>
+                            </center>
                         </div>
                     </div>
                 </div>
@@ -84,8 +80,10 @@
             <div class="toolbar">
                 <div class="toolbar-inner">
                     <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
+                    
+                    <!--Navigation Buttons-->
+                    <button class="link">Previous</button>
+                    <button id ="Next/Submit">Next</button>
                 </div>
             </div>
         </div>

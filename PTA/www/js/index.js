@@ -56,7 +56,7 @@ function addQuestion(qType, qNumber) // adds a question to the listing based on 
     "use strict";
 };
 
-document.getElementById('sq').onclick = function()
+document.getElementById('a+').onclick = function()
 {
     console.log("button was clicked so now");
     questionTableHandler.selectQuestions(displayRecord, selectedType);

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
     <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
@@ -28,6 +28,32 @@
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
+     <style>
+     .button {
+            background-color: silver;
+            border: 15px 15px;
+            color: orange;
+            padding: 5px 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: inherit;
+            cursor: pointer;
+        }
+        .button1{
+            background-color: silver;
+            color: orange;
+        }
+        h3{
+            text-align: center;
+            color: black;
+        }
+        p{
+            text-align: center;
+            color: orange;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,13 +67,15 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="left">
-                         <!--<a href="#" class="back link">-->
-                            <i class="icon icon-back"></i>
-                            <p><a href="home.html"> Back</a></p>
-                       </div>
+                        <!--<a href="#" class="back link">-->
+                        <i class="icon icon-back"></i>
+                        <p><a href="home.html"> Back</a></p>
+                    </div>
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding"><h3>Mode Selector</h3></div>
-                     <div class="right"></div>
+                    <div class="center sliding">
+                        <h3>Mode Selector</h3>
+                    </div>
+                    <div class="right"></div>
                 </div>
             </div>
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
@@ -60,37 +88,45 @@
                             <h3><i>Please select a testing mode.</i></h3>
                             <p>"<b>Test Mode</b>" features 25 questions. At the end of the test, your score will be revealed along with the questions and the corrected answers.</p>
                             <p>
-                                In "<b>Study Mode</b>", after you select the amount of questions that you wish to receive, you may start. The moment after you pick an answer, if correct, appear in green; if incorrect, it will appear in red.   
+                                In "<b>Study Mode</b>", after you select the amount of questions that you wish to receive, you may start. The moment after you pick an answer, if correct, appear in green; if incorrect, it will appear in red.
                             </p>
-                           <center> <div>
-                               <button id="testMbttn"><b>Test Mode3</b></button>
-                                <div>
-                                    <br><br>
-                                    <button id= "studyMbttn"><b>Study Mode</b></button></div>
-                               <div>
-                               <br>
-                       <input type="range" id="myRange" value="25">
-  
-                               </div>
-                               <div>
-                                   <br><br>
-                                   <button id="go"> <i>Go</i></button>
-                               </div>
-                               
-                               </div></center>
-                            
-                            
+
+<div><center>
+                                    <button class = "button"id="testMbttn"><b>Test Mode2</b></button>
+                                    <div>
+                                        <br><br>
+                                        <button class = "button"id="studyMbttn"><b>Study Mode</b></button>
+                                    </div>
+    </center>
+                            <div class="content-block-title">Choose amount of questions</div>
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input type="text" placeholder="1 - 25" readonly id="picker-device">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <br><br>
+                                <center><button class = "button1" id="go"> <i>Go</i></button></center>
+                            </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
-            
-        </div>
-    </div>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
+            <script type="text/javascript" src="cordova.js"></script>
+            <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+            <script type="text/javascript" src="js/my-app.js"></script>
 </body>
 
 </html>

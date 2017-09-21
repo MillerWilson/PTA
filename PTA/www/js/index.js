@@ -59,7 +59,7 @@ function addQuestion(qType, qNumber) // adds a question to the listing based on 
 document.getElementById('a+h').onclick = function()
 {
     console.log("button was clicked so now");
-    selectedType= 'a+h';
+    selectedType= 'A+H';
     questionTableHandler.selectQuestions(displayRecord, selectedType);
 };
 document.getElementById('a+s').onclick = function()

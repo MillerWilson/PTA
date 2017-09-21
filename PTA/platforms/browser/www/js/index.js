@@ -56,8 +56,27 @@ function addQuestion(qType, qNumber) // adds a question to the listing based on 
     "use strict";
 };
 
-document.getElementById('a+').onclick = function()
+document.getElementById('a+h').onclick = function()
 {
     console.log("button was clicked so now");
+    selectedType= 'a+h';
+    questionTableHandler.selectQuestions(displayRecord, selectedType);
+};
+document.getElementById('a+s').onclick = function()
+{
+    console.log("button was clicked so now");
+     selectedType= 'a+s';
+    questionTableHandler.selectQuestions(displayRecord, selectedType);
+};
+document.getElementById('n+').onclick = function()
+{
+    console.log("button was clicked so now");
+     selectedType= 'n+';
+    questionTableHandler.selectQuestions(displayRecord, selectedType);
+};
+document.getElementById('s+').onclick = function()
+{
+    console.log("button was clicked so now");
+     selectedType= 's+';
     questionTableHandler.selectQuestions(displayRecord, selectedType);
 };

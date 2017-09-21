@@ -76,7 +76,9 @@ $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
     myApp.alert('Here comes About page');
 });
 
-//this allows the pickers to work on the mode pages
+
+//this allows the pickers to work on the mode pages.
+
 var pickerDevice = myApp.picker({
     input: '#picker-device', 
     closeByOutsideClick: true,
@@ -87,3 +89,4 @@ var pickerDevice = myApp.picker({
         }
     ]
 });
+

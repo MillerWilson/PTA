@@ -1,45 +1,5 @@
 var selectedType = 'ceh'; // will default to ceh
 var questionList = [];
-var app = 
-{
-    
-    // Application Constructor
-    initialize: function() 
-    {
-        this.bindEvents();
-    },
-   
-
-    // Bind any events that are required on startup with listeners. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() // add event listeners here so that they can be ready to run whenever it is time
-    {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() // when device is ready, do stuff here
-    {
-        app.receivedEvent('deviceready');
-        console.log('hey the device was actually ready this time');
-        createDb();
-        
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
-};
-
 
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler
 {   
@@ -96,7 +56,7 @@ function addQuestion(qType, qNumber) // adds a question to the listing based on 
     "use strict";
 };
 
-document.getElementById('sq').onclick = function()
+document.getElementById('a+').onclick = function()
 {
     console.log("button was clicked so now");
     questionTableHandler.selectQuestions(displayRecord, selectedType);

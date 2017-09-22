@@ -18,7 +18,9 @@ $$(document).on('deviceready', function ()
     createDb();
     
 });
-
+function goBack(){
+    window.history.back();
+}
 
 
 // Now we need to run the code that will be executed only for About page.

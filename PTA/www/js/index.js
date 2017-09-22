@@ -1,5 +1,7 @@
 var selectedType = 'ceh'; // will default to ceh
 var questionList = [];
+var answerBank = [];
+var currentQuestion =0;
 
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler
 {   
@@ -120,6 +122,59 @@ function loadpageitems()
     }
     document.getElementById('quiz').onclick = function()
     {
-        mainView.router.loadContent(testPage); // changes the page to the quiz app Page
+        loadtestPage();   
     };
+};
+function loadtestPage()
+{
+    mainView.router.loadContent(testPage); // changes the page to the quiz app Page  
+    document.getElementById('submit').onclick = function()
+    {
+        if(currentQuestion ===8)// check if all answered first
+        {
+            // submit the test with prompt first
+            
+        }
+        else
+        {
+            if(document.getElementById('A').checked)
+            {
+                answerBank[currentQuestion] = document.getElementById('A').innerHTML; nextQuestion();
+            }
+            else
+            { 
+                if(document.getElementById('B').checked)
+                {
+                    answerBank[currentQuestion] = document.getElementById('B').innerHTML; nextQuestion();
+                }
+                else 
+                {
+                    if(document.getElementById('C').checked)
+                    {
+                        answerBank[currentQuestion] = document.getElementById('C').innerHTML; nextQuestion();
+                    }
+                    else 
+                    {
+                        if(document.getElementById('D').checked)
+                        {
+                            answerBank[currentQuestion] = document.getElementById('D').innerHTML; nextQuestion();
+                        }
+                        else
+                        {
+                            window.alert("You must select an answer");
+                        }
+                    }
+                }
+            }
+                
+        }
+           
+    };
+    //document.getElementById('quiz').onclick = function()
+
+    
+};
+function nextQuestion()
+{
+    console.log(questionList.length);
 };

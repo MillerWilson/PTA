@@ -16,12 +16,12 @@
     <!-- Your app title -->
     <title>Test Page</title>
 
-    
+
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
-    <style>
+    <!--<style>
         .button {
             background-color: orange;
             border: 10px 10px;
@@ -34,7 +34,7 @@
             margin: inheri8
             cursor: pointer;
         }
-    </style>
+    </style>-->
 </head>
 
 <body class="theme-orange">
@@ -57,47 +57,53 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <div class="left"></div>
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">MillerWilson PTA</div>
-                    <div class="right">
-                       
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="testPage" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block">
-                            <center>
-                                <!--This block contains the form for the Q's & A's-->
-                                <p>This is an example question. Under are the sample answers. </p><br>
-                                <form>
-                                    <input type="radio" name="choice" value="A"> ANS 1<br><br>
-                                    <input type="radio" name="choice" value="B"> ANS 2<br><br>
-                                    <input type="radio" name="choice" value="C"> ANS 3<br><br>
-                                    <input type="radio" name="choice" value="D"> ANS 4
-                                </form><br>
-                                <button class = "button">Submit Answer</button>
-                            </center>
+            <div class="page toolbar-fixed">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"></div>
+                        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                        <div class="center sliding">MillerWilson PTA</div>
+                        <div class="right">
+
+                            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar-fixed">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    
-                    <!--Navigation Buttons-->
-                    <button class="link">Previous</button>
-                    <button id ="Next/Submit">Next</button>
+                <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+                <div class="pages navbar-through toolbar-through">
+                    <!-- Page, "data-page" contains page name -->
+                    <div data-page="testPage" class="page">
+                        <!-- Scrollable page content -->
+                        <div class="page-content">
+                            <div class="content-block">
+
+                                <!--This block contains the form for the Q's & A's-->
+                                <p><b>Which of the following is NOT a type of motherboard expansion slot?</b> </p><br>
+<div class="content-block-inner">
+                                <form>
+                                    <input type="radio" name="choice" value="A"> ISA<br><br>
+                                    <input type="radio" name="choice" value="B"> PCI<br><br>
+                                    <input type="radio" name="choice" value="C"> AGP<br><br>
+                                    <input type="radio" name="choice" value="D"> ATX
+                                </form><br>
+                                </div>
+                           
+
+                            <div class="page-content">
+                                <button class="button">Submit Answer</button>
+
+                            </div>
+ </div>
+                        </div>
+                        <!-- Bottom Toolbar-->
+                        <div class="toolbar toolbar-bottom">
+                            <div class="toolbar-inner">
+                                <a href="#" class="button">Previous</a>
+
+                                <a href="#" class="button">Next</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,6 +112,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+
 </body>
 
 </html>

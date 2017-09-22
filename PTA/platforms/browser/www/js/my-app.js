@@ -20,37 +20,7 @@ $$(document).on('deviceready', function ()
 });
 
 
-function myFunction() {
-    var y = document.getElementById("mypass").value;
-    if (from.mypass.value == "1234") {
-        myApp.alert();
-    } else {
-        alert("the voucher does not match");
-    }
 
-};
-
-function myFunction() {
-    var x = document.getElementById("getVouch").href;
-
-    function myFunction() {
-        var x = document.getElementById("test").href;
-    }
-
-    function myFunction() {
-        var x = document.getElementById("test1").href;
-    }
-
-    function myFunction() {
-        var x = document.getElementById("test2").href;
-    }
-
-    function myFunction() {
-        var x = document.getElementById("test3").href;
-    }
-
-
-}
 // Now we need to run the code that will be executed only for About page.
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):

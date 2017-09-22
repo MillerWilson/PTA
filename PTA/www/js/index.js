@@ -94,7 +94,7 @@ document.getElementById('s+').onclick = function()
 
 function loadpageitems()
 {
-      var pickerDevice = myApp.picker(
+    var pickerDevice = myApp.picker(
         {
             input: '#picker-device', 
             closeByOutsideClick: true,
@@ -105,7 +105,7 @@ function loadpageitems()
             }]
         });
     
-    switch(selectedType)
+    switch(selectedType) // switch to select the title
     {
     case 'S+':
          document.getElementById('headline').innerHTML ='Security+';
@@ -118,5 +118,8 @@ function loadpageitems()
     default:
          document.getElementById('headline').innerHTML ='A+ Software';
     }
-
+    document.getElementById('quiz').onclick = function()
+    {
+        mainView.router.loadContent(testPage); // changes the page to the quiz app Page
+    };
 };

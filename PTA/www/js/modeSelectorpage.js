@@ -1,4 +1,4 @@
-var modePage =   '<div class="navbar"><div class="navbar-inner"><div class="left">'+
+var modePage =   '<div class="navbar"><div class="navbar-inner"><div class="left">'+ // html for dynamic page loading
                        '<!--<a href="#" class="back link">-->'+
                         '<i class="icon icon-back"></i>'+
                         '<p><a href="index.html"> Back</a></p>'+
@@ -10,9 +10,9 @@ var modePage =   '<div class="navbar"><div class="navbar-inner"><div class="left
                     '<div class="right"></div>'+
                 '</div>'+
             '</div>'+// here is okay
-    
     '<div class = "page" data-page="popPage">'+'<div class="page-content">'+
          
+        
                 '<!-- Page, "data-page" contains page name -->'+
                     '<!-- Scrollable page content -->'+
                     '<div class="page-content">'+
@@ -30,7 +30,7 @@ var modePage =   '<div class="navbar"><div class="navbar-inner"><div class="left
 
                                 '</div>'+
                                 '<div>'+
-                                    '<p><a href="#" class="button">Quiz/Study Mode</a></p>'+
+                                    '<p><a href="#" id=quiz class="button">Quiz/Study Mode</a></p>'+
                                 '</div>'+
 
 
@@ -66,48 +66,47 @@ var modePage =   '<div class="navbar"><div class="navbar-inner"><div class="left
 
 
 
-var testPage = '<!-- Status bar overlay for full screen mode (PhoneGap) -->'+
-    '<div class="statusbar-overlay"></div>'+
+var testPage ='<div class="navbar">'+
+                    '<div class="navbar-inner">'+
+                        '<div class="left"></div>'+
+                        '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->'+
+                        '<div class="center sliding" id = questionTitle>Whatever Question number</div>'+
+                        '<div class="right">'+
 
+                            '<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+// here is okay
+
+
+'<div class = "page" data-page="popPage">'+
+     '<div class="statusbar-overlay"></div>'+
+        '<p>asdfasdfasdff</p>'+
     '<!-- Panels overlay-->'+
     '<div class="panel-overlay"></div>'+
-    '<!-- Left panel with reveal effect-->'+
-    '<div class="panel panel-right panel-reveal">'+
+    
+    
+     '<div class="page-content">'+
+       '<div class="panel panel-right panel-reveal">'+
         '<div class="content-block">'+
             '<p>Settings</p>'+
             '<p>about</p>'+
 
         '</div>'+
     '</div>'+
+         
+        
+                '<!-- Page, "data-page" contains page name -->'+
+                    '<!-- Scrollable page content -->'+
+                    '<div class="page-content">'+
+                      
 
-    '<!-- Views -->'+
-    '<div class="views">'+
-        '<!-- Your main view, should have "view-main" class -->'+
-        '<div class="view view-main">'+
-            '<!-- Top Navbar-->'+
-            '<div class="page toolbar-fixed">'+
-                '<div class="navbar">'+
-                    '<div class="navbar-inner">'+
-                        '<div class="left"></div>'+
-                        '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->'+
-                        '<div class="center sliding">MillerWilson PTA</div>'+
-                        '<div class="right">'+
 
-                            '<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->'+
-                '<div class="pages navbar-through toolbar-through">'+
-                    '<!-- Page, "data-page" contains page name -->'+
-                    '<div data-page="testPage" class="page">'+
-                        '<!-- Scrollable page content -->'+
-                        '<div class="page-content">'+
-                            '<div class="content-block">'+
+                                 '<div class="content-block">'+
 
                                 '<!--This block contains the form for the Q'+'s & A'+'s-->'+
                                 '<p><b>Which of the following is NOT a type of motherboard expansion slot?</b> </p><br>'+
-'<div class="content-block-inner">'+
+                    '<div class="content-block-inner">'+
                                 '<form>'+
                                     '<input type="radio" name="choice" value="A"> ISA<br><br>'+
                                     '<input type="radio" name="choice" value="B"> PCI<br><br>'+
@@ -115,16 +114,10 @@ var testPage = '<!-- Status bar overlay for full screen mode (PhoneGap) -->'+
                                     '<input type="radio" name="choice" value="D"> ATX'+
                                 '</form><br>'+
                                 '</div>'+
-                           
-
-
-                            '<div class="page-content">'+
+                    '<div class="page-content">'+
                                 '<button class="button">Submit Answer</button>'+
-
                             '</div>'+
- '</div>'+
-                        '</div>'+
-                        '<!-- Bottom Toolbar-->'+
+                    '<!-- Bottom Toolbar-->'+
                         '<div class="toolbar toolbar-bottom">'+
                             '<div class="toolbar-inner">'+
                                 '<a href="#" class="button">Previous</a>'+
@@ -132,13 +125,37 @@ var testPage = '<!-- Status bar overlay for full screen mode (PhoneGap) -->'+
                                 '<a href="#" class="button">Next</a>'+
                             '</div>'+
                         '</div>'+
-                    '</div>'+
+                           
+
+
+                        
+        '</div>'+                        
+                            '</div>'+
+
+
+
+                        '</div>'+
+                    '</div>';
+
+
+
+
+
+
+
+/*'
+ 
+
+            '<!-- Top Navbar-->'+
+            '<div class="page toolbar-fixed">'+
+              
+                '<!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->'+
+                '<div class="pages navbar-through toolbar-through">'+
+                    
                 '</div>'+
-            '</div>'+
-        '</div>'+
-    '</div>';
+            '</div>';
 
-
+*/
 
 
 

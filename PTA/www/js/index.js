@@ -138,7 +138,7 @@ function loadtestPage()
         else
         {
             if(document.getElementById('A').checked)
-            {
+            { 
                 answerBank[currentQuestion] = document.getElementById('A').innerHTML; nextQuestion();
             }
             else
@@ -174,7 +174,26 @@ function loadtestPage()
 
     
 };
-function nextQuestion()
+function nextQuestion() // moves to next question
 {
-    console.log(questionList.length);
+    if(currentQuestion+1<=questionList.length)
+    {
+        currentQuestion++;
+        loadQuestion();        
+    }
+
+    
+   
+};
+function loadQuestion()
+{
+    document.getElementById('D_text').innerHTML = questionList[currentQuestion].answer1;
+    document.getElementById('A_text').innerHTML = questionList[currentQuestion].answer2;
+    document.getElementById('B_text').innerHTML = questionList[currentQuestion].answer3;
+    document.getElementById('C_text').innerHTML = questionList[currentQuestion].answer4;
+    document.getElementById('prompt').innerHTML = questionList[currentQuestion].answer4;
+    document.getElementById('D').value;
+    document.getElementById('D').value;
+    document.getElementById('D').value;
+    document.getElementById('D').value;
 };

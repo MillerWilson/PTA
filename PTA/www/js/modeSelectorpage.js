@@ -79,9 +79,9 @@ var testPage = '<div class="navbar">' +
     '</div>' + // here is okay
 
 
-    '<div class = "page" data-page="popPage">' +
+    '<div class = "page no-swipeback" data-page="popPage">' +
     '<div class="statusbar-overlay"></div>' +
-    '<p>asdfasdfasdff</p>' +
+    //'<p>asdfasdfasdff</p>' +
    '<!-- Panels overlay-->' +
     '<div class="panel-overlay"></div>' +
 
@@ -95,12 +95,9 @@ var testPage = '<div class="navbar">' +
     '</div>' +
     '</div>' +
 
-
     '<!-- Page, "data-page" contains page name -->' +
     '<!-- Scrollable page content -->' +
     '<div class="page-content">' +
-
-
 
     '<div class="content-block">' +
 
@@ -113,28 +110,34 @@ var testPage = '<div class="navbar">' +
     '<input type="radio" id=C name="choice" value="C"> AGP<br><br>' +
     '<input type="radio" id=D name="choice" value="D"> ATX' +
     '</form><br>' +
+    
     '</div>' +
+    '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>'+
     '<div class="page-content">' +
-    '<button class="button" id = submit>Submit Answer</button>' +
+    
+    '<div class="row">'+
+    '<div class ="col-50">'+
+    '<a href="#" class="button button-big">Previous</a></div>'+
+    '<div class="col-50">'+
+    '<a href="#" class="button button-big">Next</a></div>' +
+    '<div>'+
+    
+    '</div>'+
+    '</div>'+
     '</div>' +
-    '<!-- Bottom Toolbar-->' +
+  
+    '</div>' +
+    '</div>' +
+
+    '</div>' +
+      '<!-- Bottom Toolbar-->' +
     '<div class="toolbar toolbar-bottom">' +
-    '<div class="toolbar-inner">' +
-    '<a href="#" class="button">Previous</a>' +
-
-    '<a href="#" class="button">Next</a>' +
+    '<div class="toolbar">' +
+    
+    
     '</div>' +
     '</div>' +
 
-
-
-
-    '</div>' +
-    '</div>' +
-
-
-
-    '</div>' +
     '</div>';
 
 

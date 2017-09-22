@@ -108,14 +108,14 @@ var testPage = '<div class="navbar">' +
     '<p><b>Which of the following is NOT a type of motherboard expansion slot?</b> </p><br>' +
     '<div class="content-block-inner">' +
     '<form>' +
-    '<input type="radio" name="choice" value="A"> ISA<br><br>' +
-    '<input type="radio" name="choice" value="B"> PCI<br><br>' +
-    '<input type="radio" name="choice" value="C"> AGP<br><br>' +
-    '<input type="radio" name="choice" value="D"> ATX' +
+    '<input type="radio" id=A name="choice" value="A"> ISA<br><br>' +
+    '<input type="radio" id=B name="choice" value="B"> PCI<br><br>' +
+    '<input type="radio" id=C name="choice" value="C"> AGP<br><br>' +
+    '<input type="radio" id=D name="choice" value="D"> ATX' +
     '</form><br>' +
     '</div>' +
     '<div class="page-content">' +
-    '<button class="button">Submit Answer</button>' +
+    '<button class="button" id = submit>Submit Answer</button>' +
     '</div>' +
     '<!-- Bottom Toolbar-->' +
     '<div class="toolbar toolbar-bottom">' +

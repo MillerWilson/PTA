@@ -63,35 +63,32 @@ document.getElementById('a+h').onclick = function()
 {
     selectedType= 'A+H';
     mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadpageitems();
+    loadmodepage();
 };
 document.getElementById('a+s').onclick = function()
 {
     console.log("button was clicked so now");
     selectedType= 'A+S';
     mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadpageitems();
+    loadmodepage();
 
-    questionTableHandler.selectQuestions(displayRecord, selectedType);
 };
 document.getElementById('n+').onclick = function()
 {
     console.log("button was clicked so now");
     selectedType= 'N+';
     mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadpageitems();
-
-    questionTableHandler.selectQuestions(displayRecord, selectedType);
+    loadmodepage();
 };
 document.getElementById('s+').onclick = function()
 {
     console.log("button was clicked so now");
     selectedType= 'S+';
     mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadpageitems();
+    loadmodepage();
 };
 
-function loadpageitems()
+function loadmodepage()
 {
     var pickerDevice = myApp.picker(
         {
@@ -135,7 +132,6 @@ function loadtestPage(pick)
     console.log("thig  "+ pickerNumber);
     questionTableHandler.selectQuestions(displayRecord, selectedType);
     mainView.router.loadContent(testPage); // changes the page to the quiz app Page  
-    loadQuestion();
     document.getElementById('submit').onclick = function()
     {
         if(currentQuestion ===8)// check if all answered first
@@ -177,15 +173,30 @@ function loadtestPage(pick)
         }
            
     };
-    //document.getElementById('quiz').onclick = function()
+    document.getElementById('previous').onclick = function()
+    {
+        previousQuestion();
+    };
+    document.getElementById('next').onclick = function()
+    {
+        nextQuestion();
+    };
 
-    
 };
 function nextQuestion() // moves to next question
 {
     if(currentQuestion+1<=questionList.length)
     {
         currentQuestion++;
+        loadQuestion();        
+    }
+   
+};
+function previousQuestion() // moves to next question
+{
+    if(currentQuestion-1>=0)
+    {
+        currentQuestion--;
         loadQuestion();        
     }
    

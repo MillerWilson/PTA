@@ -1,5 +1,7 @@
 var selectedType = 'ceh'; // will default to ceh
 var questionList = [];
+var answerBank = [];
+var currentQuestion =0;
 
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler
 {   
@@ -94,7 +96,7 @@ document.getElementById('s+').onclick = function()
 
 function loadpageitems()
 {
-      var pickerDevice = myApp.picker(
+    var pickerDevice = myApp.picker(
         {
             input: '#picker-device', 
             closeByOutsideClick: true,
@@ -105,7 +107,7 @@ function loadpageitems()
             }]
         });
     
-    switch(selectedType)
+    switch(selectedType) // switch to select the title
     {
     case 'S+':
          document.getElementById('headline').innerHTML ='Security+';
@@ -118,5 +120,80 @@ function loadpageitems()
     default:
          document.getElementById('headline').innerHTML ='A+ Software';
     }
+    document.getElementById('quiz').onclick = function()
+    {
+        loadtestPage();   
+    };
+};
+function loadtestPage()
+{
+    mainView.router.loadContent(testPage); // changes the page to the quiz app Page  
+    document.getElementById('submit').onclick = function()
+    {
+        if(currentQuestion ===8)// check if all answered first
+        {
+            // submit the test with prompt first
+            
+        }
+        else
+        {
+            if(document.getElementById('A').checked)
+            { 
+                answerBank[currentQuestion] = document.getElementById('A').innerHTML; nextQuestion();
+            }
+            else
+            { 
+                if(document.getElementById('B').checked)
+                {
+                    answerBank[currentQuestion] = document.getElementById('B').innerHTML; nextQuestion();
+                }
+                else 
+                {
+                    if(document.getElementById('C').checked)
+                    {
+                        answerBank[currentQuestion] = document.getElementById('C').innerHTML; nextQuestion();
+                    }
+                    else 
+                    {
+                        if(document.getElementById('D').checked)
+                        {
+                            answerBank[currentQuestion] = document.getElementById('D').innerHTML; nextQuestion();
+                        }
+                        else
+                        {
+                            window.alert("You must select an answer");
+                        }
+                    }
+                }
+            }
+                
+        }
+           
+    };
+    //document.getElementById('quiz').onclick = function()
 
+    
+};
+function nextQuestion() // moves to next question
+{
+    if(currentQuestion+1<=questionList.length)
+    {
+        currentQuestion++;
+        loadQuestion();        
+    }
+
+    
+   
+};
+function loadQuestion()
+{
+    document.getElementById('D_text').innerHTML = questionList[currentQuestion].answer1;
+    document.getElementById('A_text').innerHTML = questionList[currentQuestion].answer2;
+    document.getElementById('B_text').innerHTML = questionList[currentQuestion].answer3;
+    document.getElementById('C_text').innerHTML = questionList[currentQuestion].answer4;
+    document.getElementById('prompt').innerHTML = questionList[currentQuestion].answer4;
+    document.getElementById('D').value;
+    document.getElementById('D').value;
+    document.getElementById('D').value;
+    document.getElementById('D').value;
 };

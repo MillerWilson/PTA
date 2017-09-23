@@ -7,14 +7,11 @@ function displayRecord(tx, results) // loads result set into the questionlist. u
 {   
     questionList = []; // clear question list upon new query
     console.log('This many questions in the table: '+ results.rows.length); 
-    //pickerNumber=10;
-    console.log('This is the picker number: '+ pickerNumber);
-    
+    console.log("loading questions for test");
     for(i=0;i<results.rows.length && i<pickerNumber;++i)
         {
             questionList[i]=
             {
-                
                 prompt: results.rows.item(i).inquisition,
                 answer1: results.rows.item(i).a1,
                 answer2: results.rows.item(i).a2,
@@ -23,12 +20,10 @@ function displayRecord(tx, results) // loads result set into the questionlist. u
                 correctAnswer: results.rows.item(i).correct,
                 explanation: results.rows.item(i).Explanation
             };
-            
-             console.log("questions have loaded");
         }    
-    questionList = shuffle(questionList);
-    console.log(questionList[0].explanation);
     console.log("questions have loaded");
+    questionList = shuffle(questionList);
+    console.log("shuffled questions");
  
 };
 
@@ -66,7 +61,6 @@ function addQuestion(qType, qNumber) // adds a question to the listing based on 
 
 document.getElementById('a+h').onclick = function()
 {
-    console.log("button was clicked so now");
     selectedType= 'A+H';
     mainView.router.loadContent(modePage); // changes the page to the mode page
     loadpageitems();
@@ -141,6 +135,7 @@ function loadtestPage(pick)
     console.log("thig  "+ pickerNumber);
     questionTableHandler.selectQuestions(displayRecord, selectedType);
     mainView.router.loadContent(testPage); // changes the page to the quiz app Page  
+    loadQuestion();
     document.getElementById('submit').onclick = function()
     {
         if(currentQuestion ===8)// check if all answered first
@@ -193,8 +188,6 @@ function nextQuestion() // moves to next question
         currentQuestion++;
         loadQuestion();        
     }
-
-    
    
 };
 function loadQuestion()

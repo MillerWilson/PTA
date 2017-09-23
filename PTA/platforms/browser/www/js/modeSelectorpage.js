@@ -117,9 +117,9 @@ var testPage = '<div class="navbar">' +
     
     '<div class="row">'+
     '<div class ="col-50">'+
-    '<a href="#" class="button button-big">Previous</a></div>'+
+    '<a href="#" id = previous class="button button-big">Previous</a></div>'+
     '<div class="col-50">'+
-    '<a href="#" class="button button-big">Next</a></div>' +
+    '<a href="#" id = next class="button button-big">Next</a></div>' +
     '<div>'+
     
     '</div>'+

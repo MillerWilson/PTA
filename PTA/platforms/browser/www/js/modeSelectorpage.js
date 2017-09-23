@@ -102,13 +102,13 @@ var testPage = '<div class="navbar">' +
     '<div class="content-block">' +
 
     '<!--This block contains the form for the Q' + 's & A' + 's-->' +
-    '<p id=prompt><b>Which of the following is NOT a type of motherboard expansion slot?</b> </p><br>' +
+    '<p><b>Which of the following is NOT a type of motherboard expansion slot?</b> </p><br>' +
     '<div class="content-block-inner">' +
     '<form>' +
-        '<input type="radio" id=A name="choice" value="A"><label id= A_text></label> <br><br>' +
-    '<input type="radio" id=B name="choice" value="B"><label id= B_text></label><br><br>' +
-    '<input type="radio" id=C name="choice" value="C"><label id= C_text></label><br><br>' +
-    '<input type="radio" id=D name="choice" value="D"><label id= D_text></label>' +
+    '<input type="radio" id=A name="choice" value="A"> ISA<br><br>' +
+    '<input type="radio" id=B name="choice" value="B"> PCI<br><br>' +
+    '<input type="radio" id=C name="choice" value="C"> AGP<br><br>' +
+    '<input type="radio" id=D name="choice" value="D"> ATX' +
     '</form><br>' +
     
     '</div>' +
@@ -117,9 +117,9 @@ var testPage = '<div class="navbar">' +
     
     '<div class="row">'+
     '<div class ="col-50">'+
-    '<a href="#" id = previous class="button button-big">Previous</a></div>'+
+    '<a href="#" class="button button-big">Previous</a></div>'+
     '<div class="col-50">'+
-    '<a href="#" id = next class="button button-big">Next</a></div>' +
+    '<a href="#" class="button button-big">Next</a></div>' +
     '<div>'+
     
     '</div>'+

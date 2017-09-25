@@ -17,7 +17,7 @@ var questionTableHandler=
 		},//end error piece
 		function()
 		{
-			console.log("added Question successfully");
+			//console.log("added Question successfully");
 		}// end success piece
 		);// end transaction
 	},// end addQuestionToTable function

@@ -10,7 +10,7 @@ var modePage = '<div class="navbar"><div class="navbar-inner"><div class="left">
     '<div class="right"></div>' +
     '</div>' +
     '</div>' + // here is okay
-    '<div class = "page" data-page="popPage">' + '<div class="page-content">' +
+    '<div class = "page" data-page="modeSelect">' + '<div class="page-content">' + // identifier for callback in framwork 7
 
 
     '<!-- Page, "data-page" contains page name -->' +
@@ -79,7 +79,7 @@ var testPage = '<div class="navbar">' +
     '</div>' + // here is okay
 
 
-    '<div class = "page no-swipeback" data-page="popPage">' +
+    '<div class = "page no-swipeback" data-page="quizPage">' + // identifier for callback in framework 7
     '<div class="statusbar-overlay"></div>' +
     //'<p>asdfasdfasdff</p>' +
    '<!-- Panels overlay-->' +

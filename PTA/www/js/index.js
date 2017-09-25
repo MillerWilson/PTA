@@ -3,6 +3,12 @@ var questionList = [];
 var answerBank = [];
 var currentQuestion =0;
 var pickerNumber;
+var quizMode =true;
+var choiceA;
+var choiceB;
+var choiceC;
+var choiceD;
+loadTestChoicePage();
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler
 {   
     questionList = []; // clear question list upon new query
@@ -53,40 +59,8 @@ function shuffle(array) //Fisher-Yates shuffle algorithm
 
   return array;
 }
-function addQuestion(qType, qNumber) // adds a question to the listing based on seeded number 
-{
-    "use strict";
-    
-};
 
-document.getElementById('a+h').onclick = function()
-{
-    selectedType= 'A+H';
-    mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadmodepage();
-};
-document.getElementById('a+s').onclick = function()
-{
-    console.log("button was clicked so now");
-    selectedType= 'A+S';
-    mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadmodepage();
 
-};
-document.getElementById('n+').onclick = function()
-{
-    console.log("button was clicked so now");
-    selectedType= 'N+';
-    mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadmodepage();
-};
-document.getElementById('s+').onclick = function()
-{
-    console.log("button was clicked so now");
-    selectedType= 'S+';
-    mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadmodepage();
-};
 
 function loadmodepage()
 {
@@ -116,12 +90,13 @@ function loadmodepage()
     }
     document.getElementById('quiz').onclick = function() // quiz button click function
     {
+        quizMode = true;
         loadtestPage(pickerDevice.value);   
     };
 };
 function loadtestPage(pick)
 {
-    if(typeof pick == 'undefined')
+    if(typeof pick == 'undefined') // check if they bothered to used the picker
     {
         pickerNumber = 10;
     }
@@ -129,50 +104,17 @@ function loadtestPage(pick)
     {
         pickerNumber = pick[0];
     }
-    console.log("thig  "+ pickerNumber);
     questionTableHandler.selectQuestions(displayRecord, selectedType);
     mainView.router.loadContent(testPage); // changes the page to the quiz app Page  
-    document.getElementById('submit').onclick = function()
-    {
-        if(currentQuestion ===8)// check if all answered first
-        {
-            // submit the test with prompt first    
-        }
-        else
-        {
-            if(document.getElementById('A').checked)
-            { 
-                answerBank[currentQuestion] = document.getElementById('A').innerHTML; nextQuestion();
-            }
-            else
-            { 
-                if(document.getElementById('B').checked)
-                {
-                    answerBank[currentQuestion] = document.getElementById('B').innerHTML; nextQuestion();
-                }
-                else 
-                {
-                    if(document.getElementById('C').checked)
-                    {
-                        answerBank[currentQuestion] = document.getElementById('C').innerHTML; nextQuestion();
-                    }
-                    else 
-                    {
-                        if(document.getElementById('D').checked)
-                        {
-                            answerBank[currentQuestion] = document.getElementById('D').innerHTML; nextQuestion();
-                        }
-                        else
-                        {
-                            window.alert("You must select an answer");
-                        }
-                    }
-                }
-            }
-                
-        }
-           
-    };
+    currentQuestion =0;
+    quizChanges();
+   
+    choiceA = document.getElementById('A');
+    choiceB = document.getElementById('B');
+    choiceC = document.getElementById('C');
+    choiceD = document.getElementById('D');
+    
+  
     document.getElementById('previous').onclick = function()
     {
         previousQuestion();
@@ -181,11 +123,17 @@ function loadtestPage(pick)
     {
         nextQuestion();
     };
+    choiceA.onclick = highlight;
+    choiceB.onclick = highlight;
+    choiceC.onclick = highlight;
+    choiceD.onclick = highlight;
+    
 
 };
 function nextQuestion() // moves to next question
 {
-    if(currentQuestion+1<=questionList.length)
+    assignAnswer();
+    if(currentQuestion<questionList.length-1)
     {
         currentQuestion++;
         loadQuestion();        
@@ -194,6 +142,7 @@ function nextQuestion() // moves to next question
 };
 function previousQuestion() // moves to next question
 {
+    assignAnswer();
     if(currentQuestion-1>=0)
     {
         currentQuestion--;
@@ -201,15 +150,156 @@ function previousQuestion() // moves to next question
     }
    
 };
+function assignAnswer()
+{
+            if(choiceA.checked)
+            { 
+                answerBank[currentQuestion] = choiceA.value;
+            }
+            else
+            { 
+                if(choiceB.checked)
+                {
+                    answerBank[currentQuestion] = choiceB.value; 
+                }
+                else 
+                {
+                    if(choiceC.checked)
+                    {
+                        answerBank[currentQuestion] = choiceC.value; 
+                    }
+                    else 
+                    {
+                        if(choiceD.checked)
+                        {
+                            answerBank[currentQuestion] = choiceD.value; 
+                        }
+                    }
+                }
+            }
+};
 function loadQuestion()
 {
-    document.getElementById('D_text').innerHTML = questionList[currentQuestion].answer1;
-    document.getElementById('A_text').innerHTML = questionList[currentQuestion].answer2;
-    document.getElementById('B_text').innerHTML = questionList[currentQuestion].answer3;
-    document.getElementById('C_text').innerHTML = questionList[currentQuestion].answer4;
+   
+    document.getElementById('A_text').innerHTML = questionList[currentQuestion].answer1;
+    document.getElementById('B_text').innerHTML = questionList[currentQuestion].answer2;
+    document.getElementById('C_text').innerHTML = questionList[currentQuestion].answer3;
+    document.getElementById('D_text').innerHTML = questionList[currentQuestion].answer4;
     document.getElementById('prompt').innerHTML = questionList[currentQuestion].prompt;
-    document.getElementById('A').value = questionList[currentQuestion].answer1;
-    document.getElementById('B').value = questionList[currentQuestion].answer2;
-    document.getElementById('C').value = questionList[currentQuestion].answer3;
-    document.getElementById('D').value = questionList[currentQuestion].answer4;
+    choiceA.value = questionList[currentQuestion].answer1;
+    choiceB.value = questionList[currentQuestion].answer2;
+    choiceC.value = questionList[currentQuestion].answer3;
+    choiceD.value = questionList[currentQuestion].answer4;
+    if(typeof answerBank[currentQuestion] == 'undefined')
+    {
+        document.getElementById('A').checked = false;
+        document.getElementById('B').checked = false;
+        document.getElementById('C').checked = false;
+        document.getElementById('D').checked = false;
+    }
+    else
+    {        
+        switch(answerBank[currentQuestion])
+        {
+            case document.getElementById('A').value:
+                document.getElementById('A').checked = true;             
+                break;
+            case document.getElementById('B').value:
+                document.getElementById('B').checked = true; 
+            break;
+            case document.getElementById('C').value:
+                document.getElementById('C').checked = true;   
+            break;
+            case document.getElementById('D').value:
+                document.getElementById('D').checked = true; 
+            break;
+            default:
+        }
+    }
+};
+function quizChanges()
+{
+     if(quizMode)
+    {
+        document.getElementById('submit').innerHTML = 'Explanation';// change the submit button if it's a quiz
+        document.getElementById('submit').onclick = function()
+        {
+            myApp.alert(questionList[currentQuestion].explanation, 'Explanation');
+        };
+    }
+   
+    
+};
+function loadTestChoicePage()
+{
+    document.getElementById('a+h').onclick = function()
+    {
+        selectedType= 'A+H';
+        mainView.router.loadContent(modePage); // changes the page to the mode page
+        loadmodepage();
+    };
+    document.getElementById('a+s').onclick = function()
+    {
+        console.log("button was clicked so now");
+        selectedType= 'A+S';
+        mainView.router.loadContent(modePage); // changes the page to the mode page
+        loadmodepage();
+
+    };
+    document.getElementById('n+').onclick = function()
+    {
+        console.log("button was clicked so now");
+        selectedType= 'N+';
+        mainView.router.loadContent(modePage); // changes the page to the mode page
+        loadmodepage();
+    };
+    document.getElementById('s+').onclick = function()
+    {
+        console.log("button was clicked so now");
+        selectedType= 'S+';
+        mainView.router.loadContent(modePage); // changes the page to the mode page
+        loadmodepage();
+    }; 
+};
+function highlight()
+{
+      if(choiceA.checked && choiceA.value == questionList[currentQuestion].correctAnswer)
+            { 
+               console.log('this one was right');
+            }
+            else
+            { 
+                if(choiceB.checked && choiceB.value == questionList[currentQuestion].correctAnswer)
+                {
+                    console.log('this one was right');
+                }
+                else 
+                {
+                    if(choiceC.checked && choiceC.value == questionList[currentQuestion].correctAnswer)
+                    {
+                       console.log('this one was right');
+                    }
+                    else 
+                    {
+                        if(choiceD.checked && choiceD.value == questionList[currentQuestion].correctAnswer)
+                        {
+                            console.log('this one was right');
+                        }
+                    }
+                }
+            }  
+};
+function checkAllAnswers()
+{
+    var score = 0;
+    var right = 0;
+    for(i=0;i<questionList.length;++i)
+        {
+            if(answerBank[i] == questionList[i].correctAnswer)
+            {
+                right++;
+            }
+        }
+    score = right/questionList.length;
+    return score;
 };

@@ -32,7 +32,7 @@ var filehandler=
         
         
             var desired_value =1;// initialize for non null value
-        
+            console.log('loading the question table');
             while(typeof desired_value!== "undefined") // loop to load the info while are still entries in the file
                 {
                 for(x=0;x<8;++x) // runs through a single line of the excell file
@@ -47,7 +47,8 @@ var filehandler=
                 ++i;
                 desired_cell = worksheet['A'+i]; // point to the cell we want    
                 desired_value = (desired_cell ? desired_cell.v : undefined);  //look forward for empty attribute
-           }
+                }// end while loop
+            console.log('question table has loaded');
         };// end of onload
 
         oReq.send(); // initiate request

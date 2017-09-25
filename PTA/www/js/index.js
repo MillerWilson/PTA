@@ -53,11 +53,6 @@ function shuffle(array) //Fisher-Yates shuffle algorithm
 
   return array;
 }
-function addQuestion(qType, qNumber) // adds a question to the listing based on seeded number 
-{
-    "use strict";
-    
-};
 
 document.getElementById('a+h').onclick = function()
 {
@@ -129,9 +124,10 @@ function loadtestPage(pick)
     {
         pickerNumber = pick[0];
     }
-    console.log("thig  "+ pickerNumber);
     questionTableHandler.selectQuestions(displayRecord, selectedType);
     mainView.router.loadContent(testPage); // changes the page to the quiz app Page  
+    currentQuestion =0;
+    
     document.getElementById('submit').onclick = function()
     {
         if(currentQuestion ===8)// check if all answered first
@@ -142,25 +138,29 @@ function loadtestPage(pick)
         {
             if(document.getElementById('A').checked)
             { 
-                answerBank[currentQuestion] = document.getElementById('A').innerHTML; nextQuestion();
+                answerBank[currentQuestion] = document.getElementById('A').value;
+                nextQuestion();
             }
             else
             { 
                 if(document.getElementById('B').checked)
                 {
-                    answerBank[currentQuestion] = document.getElementById('B').innerHTML; nextQuestion();
+                    answerBank[currentQuestion] = document.getElementById('B').value; 
+                    nextQuestion();
                 }
                 else 
                 {
                     if(document.getElementById('C').checked)
                     {
-                        answerBank[currentQuestion] = document.getElementById('C').innerHTML; nextQuestion();
+                        answerBank[currentQuestion] = document.getElementById('C').value; 
+                        nextQuestion();
                     }
                     else 
                     {
                         if(document.getElementById('D').checked)
                         {
-                            answerBank[currentQuestion] = document.getElementById('D').innerHTML; nextQuestion();
+                            answerBank[currentQuestion] = document.getElementById('D').value; 
+                            nextQuestion();
                         }
                         else
                         {
@@ -173,6 +173,7 @@ function loadtestPage(pick)
         }
            
     };
+  
     document.getElementById('previous').onclick = function()
     {
         previousQuestion();
@@ -203,13 +204,41 @@ function previousQuestion() // moves to next question
 };
 function loadQuestion()
 {
-    document.getElementById('D_text').innerHTML = questionList[currentQuestion].answer1;
-    document.getElementById('A_text').innerHTML = questionList[currentQuestion].answer2;
-    document.getElementById('B_text').innerHTML = questionList[currentQuestion].answer3;
-    document.getElementById('C_text').innerHTML = questionList[currentQuestion].answer4;
+   
+    document.getElementById('A_text').innerHTML = questionList[currentQuestion].answer1;
+    document.getElementById('B_text').innerHTML = questionList[currentQuestion].answer2;
+    document.getElementById('C_text').innerHTML = questionList[currentQuestion].answer3;
+    document.getElementById('D_text').innerHTML = questionList[currentQuestion].answer4;
     document.getElementById('prompt').innerHTML = questionList[currentQuestion].prompt;
     document.getElementById('A').value = questionList[currentQuestion].answer1;
     document.getElementById('B').value = questionList[currentQuestion].answer2;
     document.getElementById('C').value = questionList[currentQuestion].answer3;
     document.getElementById('D').value = questionList[currentQuestion].answer4;
+    if(typeof answerBank[currentQuestion] == 'undefined')
+    {
+        document.getElementById('A').checked = false;
+        console.log('this question was not answered');
+        document.getElementById('B').checked = false;
+        document.getElementById('C').checked = false;
+        document.getElementById('D').checked = false;
+    }
+    else
+    {        
+        switch(answerBank[currentQuestion])
+        {
+            case document.getElementById('A').value:
+                document.getElementById('A').checked = true;             
+                break;
+            case document.getElementById('B').value:
+                document.getElementById('B').checked = true; 
+            break;
+            case document.getElementById('C').value:
+                document.getElementById('C').checked = true;   
+            break;
+            case document.getElementById('D').value:
+                document.getElementById('D').checked = true; 
+            break;
+            default:
+        }
+    }
 };

@@ -15,6 +15,7 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function () 
 {
     console.log("Device is now ready!");
+    document.addEventListener("backbutton", backbutton, true);
     createDb();
     
 });

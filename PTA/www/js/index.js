@@ -1,6 +1,7 @@
 var selectedType = 'ceh'; // will default to ceh
 var questionList = [];
 var answerBank = [];
+var backallowed=true;
 var currentQuestion =0;
 var pickerNumber;
 var quizMode =true;
@@ -104,6 +105,7 @@ function loadmodepage()
 };
 function loadtestPage(pick)
 {
+    backallowed = false;
     if(typeof pick == 'undefined') // check if they bothered to used the picker
     {
         pickerNumber = 10;
@@ -361,4 +363,25 @@ function checkAllAnswers()
         }
     score = right/questionList.length;
     return score;
+};
+function backbutton()
+{
+    if(mainView.activePage.name == 'quizPage')
+    {
+       // locks out quiz page
+    }
+    else
+    {
+        if(mainView.activePage.name == 'home')
+        {
+            myApp.confirm('Are you sure you want to exit?', function () 
+            {
+               navigator.app.exitApp();
+            });    
+        }
+        else
+        {
+            mainView.router.back();
+        }
+    }
 };

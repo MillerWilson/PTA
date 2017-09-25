@@ -93,6 +93,10 @@ function loadmodepage()
         quizMode = true;
         loadtestPage(pickerDevice.value);   
     };
+    document.getElementById('returnLnk').onclick = function()
+    {
+        mainView.router.back();
+    }
 };
 function loadtestPage(pick)
 {

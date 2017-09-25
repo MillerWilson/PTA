@@ -6,6 +6,7 @@ var pickerNumber;
 var quizMode =true;
 var choiceA;
 var choiceB;
+var choiceC;
 var choiceD;
 loadTestChoicePage();
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler

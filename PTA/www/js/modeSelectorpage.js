@@ -1,7 +1,7 @@
 var modePage = '<div class="navbar"><div class="navbar-inner"><div class="left">' + // html for dynamic page loading
     '<!--<a href="#" class="back link">-->' +
     '<i class="icon icon-back"></i>' +
-    '<p><a href="index.html"> Back</a></p>' +
+    '<p id= returnLnk><a href="#"> Back</a></p>' +
     '</div>' + // here is okay
     '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->' +
     '<div class="center sliding">' +
@@ -81,7 +81,7 @@ var testPage = '<div class="navbar">' +
 
     '<div class = "page no-swipeback" data-page="quizPage">' + // identifier for callback in framework 7
     '<div class="statusbar-overlay"></div>' +
-    //'<p>asdfasdfasdff</p>' +
+   
    '<!-- Panels overlay-->' +
     '<div class="panel-overlay"></div>' +
 
@@ -146,16 +146,3 @@ var testPage = '<div class="navbar">' +
 
 
 
-/*'
- 
-
-            '<!-- Top Navbar-->'+
-            '<div class="page toolbar-fixed">'+
-              
-                '<!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->'+
-                '<div class="pages navbar-through toolbar-through">'+
-                    
-                '</div>'+
-            '</div>';
-
-*/

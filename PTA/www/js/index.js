@@ -8,6 +8,10 @@ var choiceA;
 var choiceB;
 var choiceC;
 var choiceD;
+var choiceALabel;
+var choiceBLabel;
+var choiceCLabel;
+var choiceDLabel;
 loadTestChoicePage();
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler
 {   
@@ -108,7 +112,7 @@ function loadtestPage(pick)
     {
         pickerNumber = pick[0];
     }
-    questionTableHandler.selectQuestions(displayRecord, selectedType);
+    questionTableHandler.selectQuestions(displayRecord, selectedType); //select the questions according to the choice
     mainView.router.loadContent(testPage); // changes the page to the quiz app Page  
     currentQuestion =0;
     quizChanges();
@@ -117,6 +121,11 @@ function loadtestPage(pick)
     choiceB = document.getElementById('B');
     choiceC = document.getElementById('C');
     choiceD = document.getElementById('D');
+    choiceALabel= document.getElementById('A_text');
+    choiceBLabel= document.getElementById('B_text');
+    choiceCLabel= document.getElementById('C_text');
+    choiceDLabel= document.getElementById('D_text');
+    
     
   
     document.getElementById('previous').onclick = function()
@@ -127,10 +136,35 @@ function loadtestPage(pick)
     {
         nextQuestion();
     };
+    
+    // click handlers for the questions
     choiceA.onclick = highlight;
     choiceB.onclick = highlight;
     choiceC.onclick = highlight;
     choiceD.onclick = highlight;
+    choiceALabel.onclick = function()
+    {
+        choiceA.checked = true;
+        highlight();
+    }
+    choiceBLabel.onclick = function()
+    {
+        choiceB.checked = true;
+        highlight();
+    }
+    choiceCLabel.onclick = function()
+    {
+        choiceC.checked = true;
+        highlight();
+    }
+    choiceDLabel.onclick = function()
+    {
+        choiceD.checked = true;
+        highlight();
+    }
+    
+    
+    
     
 
 };
@@ -220,6 +254,27 @@ function loadQuestion()
             default:
         }
     }
+    if(choiceC.value == 'undefined') // test for and hide if true/false
+    {
+        choiceC.style.display = 'none';
+        document.getElementById('C_text').style.display = 'none';
+    }
+    else
+    {
+        choiceC.style.display = 'inline';
+        document.getElementById('C_text').style.display = 'inline';
+    }
+    if(choiceD.value == 'undefined') // test for and hide if true/false
+    {
+        choiceD.style.display = 'none';
+        document.getElementById('D_text').style.display = 'none';
+    }
+    else
+    {
+        choiceD.style.display = 'inline';
+        document.getElementById('D_text').style.display = 'inline';
+    }
+        
 };
 function quizChanges()
 {

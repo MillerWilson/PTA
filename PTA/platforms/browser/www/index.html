@@ -21,31 +21,101 @@
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        a{
+        a {
             color: orange;
         }
-        body{
+
+        body {
             background-color: grey;
         }
+
         h3 {
             text-align: center;
             color: black;
         }
+
+        .statusbar-overlay {
+            background: rgb(239, 239, 244);
+        }
+
     </style>
-    
+
 </head>
 
 <body class="theme-orange">
-    
+
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
+    <!-- starts the app with a full screen popup that ask for the voucher code-->
+    <div class="login-screen modal-in">
 
+        <div class="view">
+            <div class="page">
+                <!-- page-content has additional login-screen content -->
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title">MillerWilson PTA</div>
+                    <!-- Login form -->
+                    <form>
+
+                        <div class="list-block">
+
+                            <div class="list-block-label">
+                                <h3>
+                                    <p>Welcome to the MillerWilson Practice Testing Application (PTA)!</p>
+                                </h3>
+                                <p>The PTA is used to help perspective test takers prepare for a whole host tests prior to taking it. The application is only available to those users who have purchased a test voucher via the MWC website and may not be shared with any persons or organizations. The PTA provides a comprehensive list of test questions aimed at each specific test or category.</p>
+                                <p>Please enter a valid voucher code:</p>
+                            </div>
+
+                        </div>
+                        <div class="list-block">
+                            <ul>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Voucher Code</div>
+                                        <div class="item-input">
+                                            <input type="text" id="vouchInput" placeholder="Voucher Code">
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="list-block">
+                            <ul>
+                                <li>
+                                    <form>
+                                        <center>
+                                            <a onclick="return isItEmpty();">Continue</a>
+                                        </center>
+                                    </form>
+                                </li>
+                            </ul>
+                            <script type="text/javascript">
+                                function isItEmpty() {
+                                    if ($('#vouchInput').val() == '') {
+                                        alert('Please enter voucher code');
+                                        return false;
+                                    } else {
+                                        alert('is anyone out there');
+                                        return true;
+                                    }
+                                }
+
+                            </script>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Views -->
     <div class="views">
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main" id=page1>
             <!-- Top Navbar-->
-           
+
             <div class="navbar">
 
                 <div class="navbar-inner">
@@ -63,25 +133,27 @@
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <p>
-                                &emsp;
-                                
-                                <blockquote>                            <h3>
-Please select the type of test that you would like to take.</h3></blockquote>
-                            
+                            &emsp;
 
-                                <div class="content-block" align = "center">
-                                    <br><br>
-                                    <!-- scrollable list, just in case more test need to be added-->
-                                    <div style="height:300px;width:200px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-                                        <ul style="list-style-type:none" align="center">
-                                            <li id =a+h><a href="#">Comptia A+ Hardware</a></li><br>
-                                            <li id =a+s><a href="#">Comptia A+ Software</a></li><br>
-                                            <li id = n+><a href="#">Comptia Network Security</a></li><br>
-                                            <li id = s+><a href="#">Comptia Security +</a></li><br>
-                                        </ul>
-                                    </div>
+                            <blockquote>
+                                <h3>
+                                    Please select the type of test that you would like to take.</h3>
+                            </blockquote>
+
+
+                            <div class="content-block" align="center">
+                                <br><br>
+                                <!-- scrollable list, just in case more test need to be added-->
+                                <div style="height:300px;width:200px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                                    <ul style="list-style-type:none" align="center">
+                                        <li id=a+h><a href="#">Comptia A+ Hardware</a></li><br>
+                                        <li id=a+s><a href="#">Comptia A+ Software</a></li><br>
+                                        <li id=n +><a href="#">Comptia Network Security</a></li><br>
+                                        <li id=s +><a href="#">Comptia Security +</a></li><br>
+                                    </ul>
                                 </div>
-                         
+                            </div>
+
 
                     </div>
                 </div>
@@ -93,7 +165,7 @@ Please select the type of test that you would like to take.</h3></blockquote>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-    <script lang="javascript" src="js/js-xlsx-master/dist/xlsx.full.min.js"></script>   
+    <script lang="javascript" src="js/js-xlsx-master/dist/xlsx.full.min.js"></script>
     <script type="text/javascript" src="js/databaseHandler.js"></script>
     <script type="text/javascript" src="js/questionTableHandler.js"></script>
     <script type="text/javascript" src="js/filehandler.js"></script>

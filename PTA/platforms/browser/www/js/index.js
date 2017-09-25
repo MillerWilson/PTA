@@ -3,6 +3,7 @@ var questionList = [];
 var answerBank = [];
 var currentQuestion =0;
 var pickerNumber;
+var quizmode =true;
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler
 {   
     questionList = []; // clear question list upon new query
@@ -130,48 +131,7 @@ function loadtestPage(pick)
     
     document.getElementById('submit').onclick = function()
     {
-        if(currentQuestion ===8)// check if all answered first
-        {
-            // submit the test with prompt first    
-        }
-        else
-        {
-            if(document.getElementById('A').checked)
-            { 
-                answerBank[currentQuestion] = document.getElementById('A').value;
-                nextQuestion();
-            }
-            else
-            { 
-                if(document.getElementById('B').checked)
-                {
-                    answerBank[currentQuestion] = document.getElementById('B').value; 
-                    nextQuestion();
-                }
-                else 
-                {
-                    if(document.getElementById('C').checked)
-                    {
-                        answerBank[currentQuestion] = document.getElementById('C').value; 
-                        nextQuestion();
-                    }
-                    else 
-                    {
-                        if(document.getElementById('D').checked)
-                        {
-                            answerBank[currentQuestion] = document.getElementById('D').value; 
-                            nextQuestion();
-                        }
-                        else
-                        {
-                            window.alert("You must select an answer");
-                        }
-                    }
-                }
-            }
-                
-        }
-           
+        alert.(questionList[currentQuestion].explanation);
     };
   
     document.getElementById('previous').onclick = function()
@@ -186,6 +146,7 @@ function loadtestPage(pick)
 };
 function nextQuestion() // moves to next question
 {
+    assignAnswer();
     if(currentQuestion+1<=questionList.length)
     {
         currentQuestion++;
@@ -195,6 +156,7 @@ function nextQuestion() // moves to next question
 };
 function previousQuestion() // moves to next question
 {
+    assignAnswer();
     if(currentQuestion-1>=0)
     {
         currentQuestion--;
@@ -202,6 +164,43 @@ function previousQuestion() // moves to next question
     }
    
 };
+function assignAnswer()
+{
+    
+        if(currentQuestion ===8)// check if all answered first
+        {
+            // submit the test with prompt first    
+        }
+        else
+        {
+            if(document.getElementById('A').checked)
+            { 
+                answerBank[currentQuestion] = document.getElementById('A').value;
+            }
+            else
+            { 
+                if(document.getElementById('B').checked)
+                {
+                    answerBank[currentQuestion] = document.getElementById('B').value; 
+                }
+                else 
+                {
+                    if(document.getElementById('C').checked)
+                    {
+                        answerBank[currentQuestion] = document.getElementById('C').value; 
+                    }
+                    else 
+                    {
+                        if(document.getElementById('D').checked)
+                        {
+                            answerBank[currentQuestion] = document.getElementById('D').value; 
+                        }
+                    }
+                }
+            }
+                
+        }
+}
 function loadQuestion()
 {
    

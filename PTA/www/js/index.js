@@ -3,6 +3,8 @@ var questionList = [];
 var answerBank = [];
 var currentQuestion =0;
 var pickerNumber;
+var quizMode =true;
+loadTestChoicePage();
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler
 {   
     questionList = []; // clear question list upon new query
@@ -54,34 +56,7 @@ function shuffle(array) //Fisher-Yates shuffle algorithm
   return array;
 }
 
-document.getElementById('a+h').onclick = function()
-{
-    selectedType= 'A+H';
-    mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadmodepage();
-};
-document.getElementById('a+s').onclick = function()
-{
-    console.log("button was clicked so now");
-    selectedType= 'A+S';
-    mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadmodepage();
 
-};
-document.getElementById('n+').onclick = function()
-{
-    console.log("button was clicked so now");
-    selectedType= 'N+';
-    mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadmodepage();
-};
-document.getElementById('s+').onclick = function()
-{
-    console.log("button was clicked so now");
-    selectedType= 'S+';
-    mainView.router.loadContent(modePage); // changes the page to the mode page
-    loadmodepage();
-};
 
 function loadmodepage()
 {
@@ -111,6 +86,7 @@ function loadmodepage()
     }
     document.getElementById('quiz').onclick = function() // quiz button click function
     {
+        quizMode = true;
         loadtestPage(pickerDevice.value);   
     };
 };
@@ -127,52 +103,7 @@ function loadtestPage(pick)
     questionTableHandler.selectQuestions(displayRecord, selectedType);
     mainView.router.loadContent(testPage); // changes the page to the quiz app Page  
     currentQuestion =0;
-    
-    document.getElementById('submit').onclick = function()
-    {
-        if(currentQuestion ===8)// check if all answered first
-        {
-            // submit the test with prompt first    
-        }
-        else
-        {
-            if(document.getElementById('A').checked)
-            { 
-                answerBank[currentQuestion] = document.getElementById('A').value;
-                nextQuestion();
-            }
-            else
-            { 
-                if(document.getElementById('B').checked)
-                {
-                    answerBank[currentQuestion] = document.getElementById('B').value; 
-                    nextQuestion();
-                }
-                else 
-                {
-                    if(document.getElementById('C').checked)
-                    {
-                        answerBank[currentQuestion] = document.getElementById('C').value; 
-                        nextQuestion();
-                    }
-                    else 
-                    {
-                        if(document.getElementById('D').checked)
-                        {
-                            answerBank[currentQuestion] = document.getElementById('D').value; 
-                            nextQuestion();
-                        }
-                        else
-                        {
-                            window.alert("You must select an answer");
-                        }
-                    }
-                }
-            }
-                
-        }
-           
-    };
+    quizChanges();
   
     document.getElementById('previous').onclick = function()
     {
@@ -186,6 +117,7 @@ function loadtestPage(pick)
 };
 function nextQuestion() // moves to next question
 {
+    assignAnswer();
     if(currentQuestion+1<=questionList.length)
     {
         currentQuestion++;
@@ -195,6 +127,7 @@ function nextQuestion() // moves to next question
 };
 function previousQuestion() // moves to next question
 {
+    assignAnswer();
     if(currentQuestion-1>=0)
     {
         currentQuestion--;
@@ -202,6 +135,43 @@ function previousQuestion() // moves to next question
     }
    
 };
+function assignAnswer()
+{
+    
+        if(currentQuestion ===8)// check if all answered first
+        {
+            // submit the test with prompt first    
+        }
+        else
+        {
+            if(document.getElementById('A').checked)
+            { 
+                answerBank[currentQuestion] = document.getElementById('A').value;
+            }
+            else
+            { 
+                if(document.getElementById('B').checked)
+                {
+                    answerBank[currentQuestion] = document.getElementById('B').value; 
+                }
+                else 
+                {
+                    if(document.getElementById('C').checked)
+                    {
+                        answerBank[currentQuestion] = document.getElementById('C').value; 
+                    }
+                    else 
+                    {
+                        if(document.getElementById('D').checked)
+                        {
+                            answerBank[currentQuestion] = document.getElementById('D').value; 
+                        }
+                    }
+                }
+            }
+                
+        }
+}
 function loadQuestion()
 {
    
@@ -242,3 +212,47 @@ function loadQuestion()
         }
     }
 };
+function quizChanges()
+{
+     if(quizMode)
+    {
+        document.getElementById('submit').innerHTML = 'Explanation';// change the submit button if it's a quiz
+        document.getElementById('submit').onclick = function()
+        {
+            myApp.alert(questionList[currentQuestion].explanation, 'Explanation');
+        };
+    }
+   
+    
+};
+function loadTestChoicePage()
+{
+    document.getElementById('a+h').onclick = function()
+    {
+        selectedType= 'A+H';
+        mainView.router.loadContent(modePage); // changes the page to the mode page
+        loadmodepage();
+    };
+    document.getElementById('a+s').onclick = function()
+    {
+        console.log("button was clicked so now");
+        selectedType= 'A+S';
+        mainView.router.loadContent(modePage); // changes the page to the mode page
+        loadmodepage();
+
+    };
+    document.getElementById('n+').onclick = function()
+    {
+        console.log("button was clicked so now");
+        selectedType= 'N+';
+        mainView.router.loadContent(modePage); // changes the page to the mode page
+        loadmodepage();
+    };
+    document.getElementById('s+').onclick = function()
+    {
+        console.log("button was clicked so now");
+        selectedType= 'S+';
+        mainView.router.loadContent(modePage); // changes the page to the mode page
+        loadmodepage();
+    }; 
+}

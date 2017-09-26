@@ -163,7 +163,7 @@ var resultsPage =
     '</div>' +
     '</div>' +
     '</div>' + // here is okay
-    '<div class = "page" data-page="resultsPage">' + 
+    '<div class = "page no-swipeback" data-page="resultsPage">' + 
     '<div class="page-content">' + // identifier for callback in framwork 7
 
 

@@ -25,21 +25,7 @@ $$(document).on('deviceready', function ()
 myApp.onPageAfterAnimation("quizPage", function()
 {
     loadQuestion();
-    for(i=0; i<questionList.length;i++)
-        {
-            var aTag = document.createElement('a');
-            var paragraph = document.createElement('p');
-            aTag.setAttribute('href',"#");
-            aTag.innerHTML = "Question "+(i+1);
-            paragraph.appendChild(aTag);
-            paragraph.onclick = function(){console.log('sddddd');};
-            
-            document.getElementById('panel').appendChild(paragraph);
-            
-        }
-    
-    
-    
+    loadpanel();    
     
 }); 
 

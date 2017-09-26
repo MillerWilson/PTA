@@ -426,3 +426,41 @@ function loadResultsPage()
     //mainView.router.loadContent(resultsPage);
     //document.getElementById('results').innerHTML = 'Congratulations you made '+ checkAllAnswers()+'%';
 };
+function panelLink(para)
+{
+    currentQuestion = parseInt(para.id);
+    loadQuestion();
+    
+};
+function loadpanel()
+{
+   
+    for(i=0; i<questionList.length;i++)
+    {
+        var aTag = document.createElement('a');
+        var paragraph = document.createElement('p'); 
+      
+        aTag.setAttribute('href',"#");
+        paragraph.setAttribute('id',i.toString());
+        aTag.innerHTML = "Question "+(i+1);
+        paragraph.appendChild(aTag);  
+        paragraph.onclick = function()
+        { 
+            panelLink(this);
+            myApp.closePanel();
+        };
+            
+        document.getElementById('panel').appendChild(paragraph);
+    };
+    var aTag = document.createElement('a');
+    var paragraph = document.createElement('p'); 
+    aTag.setAttribute('href',"#");
+    aTag.innerHTML = "Close Panel";
+    paragraph.appendChild(aTag);  
+    paragraph.onclick = function()
+    { 
+        myApp.closePanel();
+    };
+            
+    document.getElementById('panel').appendChild(paragraph);
+};

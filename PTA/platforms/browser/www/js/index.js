@@ -101,6 +101,11 @@ function loadmodepage()
     {
         mainView.router.back();
     }
+    document.getElementById('test').onclick = function() // quiz button click function
+    {
+        quizMode = false;
+        loadtestPage(pickerDevice.value);   
+    };
 };
 function loadtestPage(pick)
 {
@@ -218,7 +223,7 @@ function assignAnswer()
 };
 function loadQuestion()
 {
-   
+    document.getElementById('questionTitle').innerHTML = "Question Number "+(currentQuestion+1);
     document.getElementById('A_text').innerHTML = questionList[currentQuestion].answer1;
     document.getElementById('B_text').innerHTML = questionList[currentQuestion].answer2;
     document.getElementById('C_text').innerHTML = questionList[currentQuestion].answer3;
@@ -285,6 +290,10 @@ function quizChanges()
         {
             myApp.alert(questionList[currentQuestion].explanation, 'Explanation');
         };
+    }
+    else
+    {
+         document.getElementById('submit').style.display = 'none';
     }
    
     
@@ -360,5 +369,41 @@ function checkAllAnswers()
             }
         }
     score = right/questionList.length;
-    return score;
+    return score *100;
+};
+function backbutton()
+{
+    if(mainView.activePage.name == 'quizPage') //handles for quiz page
+    {
+        myApp.confirm('Leaving now will lose all progress', 'Leaving Exam',function () 
+            {
+                 mainView.router.back();
+            });    
+    }
+    else
+    {
+        if(mainView.activePage.name == 'home') // briefs for app closure
+        {
+            myApp.confirm('Are you sure you want to exit?', 'Closing PTA',function () 
+            {
+               navigator.app.exitApp();
+            });    
+        }
+        else
+        {
+            mainView.router.back();
+        }
+    }
+};
+function submitAll()
+{
+    myApp.confirm('Are you sure you want to submit the test', 'Submit Exam',function () 
+            {
+                 loadResultsPage();
+            });    
+};
+function loadResultsPage()
+{
+    //mainView.router.loadContent(resultsPage);
+    //document.getElementById('results').innerHTML = 'Congratulations you made '+ checkAllAnswers()+'%';
 };

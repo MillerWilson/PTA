@@ -26,7 +26,7 @@ var modePage = '<div class="navbar"><div class="navbar-inner"><div class="left">
     '<div>' +
 
     '<div>' +
-    '<a href="#" class="button">Test Mode</a>' +
+    '<a href="#" id=test class="button">Test Mode</a>' +
 
     '</div>' +
     '<div>' +
@@ -141,7 +141,7 @@ var testPage = '<div class="navbar">' +
     '</div>';
 
 
-
+var resultsPage = '';
 
 
 

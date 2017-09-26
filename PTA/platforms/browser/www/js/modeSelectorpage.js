@@ -83,16 +83,15 @@ var testPage =
     '<div class = "page no-swipeback" data-page="quizPage">' + // identifier for callback in framework 7
     '<div class="statusbar-overlay"></div>' +
 
-    '<!-- Panels overlay-->' +
-    '<div class="panel-overlay"></div>' +
+  // panel was here
 
 
     '<div class="page-content">' +
+          '<!-- Panels overlay-->' +
+    '<div class="panel-overlay"></div>' +
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
     '<br>' +
-    '<p>Settings</p>' +
-    '<p>about</p>' +
 
     '</div>' +
     '</div>' +
@@ -148,7 +147,9 @@ var testPage =
 
 
 var resultsPage =
-    '<div class="navbar"><div class="navbar-inner"><div class="left">' +
+    '<div class="navbar">' +
+    '<div class="navbar-inner">' +
+    '<div class="left">' +
     // html for dynamic page loading
 
     '</div>' + // here is okay
@@ -162,12 +163,39 @@ var resultsPage =
     '   </div>' +
     '</div>' +
     '</div>' + // here is okay
-    '<div class = "page" data-page="resultsPage">' + '<div class="page-content">' + // identifier for callback in framwork 7
+    '<div class = "page" data-page="resultsPage">' + 
+    '<div class="page-content">' + // identifier for callback in framwork 7
 
 
-    '<!-- Page, "data-page" contains page name -->' +
-    '<!-- Scrollable page content -->' +
-    '<div class="page-content">' +
+    <!-- Page, "data-page" contains page name -->
+    <!-- Scrollable page content -->
+    '<div class="content-block">' +
+    //<!-- Buttons row as tabs controller -->
+    '<div class="buttons-row">' +
+    //<!-- Link to 1st tab, active -->
+    '<a href="#tab1" class="tab-link active button">Score</a>' +
+    //<!-- Link to 2nd tab -->
+    '<a href="#tab2" class="tab-link button">Explanations</a>' +
+    '</div>' +
+    '</div>' +
+        
+     //<!-- Tabs, tabs wrapper -->
+     '<div class="tabs">' +
+     //<!-- Tab 1, active by default -->
+     '<div id="tab1" class="tab active">' +
+     ' <div class="content-block">' +
+     '' +
+
+     '</div>' +
+     '</div>' +
+     //<!-- Tab 2 -->
+     '<div id="tab2" class="tab">' +
+     '<div class="content-block">' +
+     '<p>This is tab 2 content</p>' +
+
+     '</div>' +
+     '</div>' +
+     '</div>' +
     '<div class="content-block-title">Your Final Score Is: </div>' +
     '<div class="content-block inset">' +
     '<div class="content-block-inner">' +
@@ -197,5 +225,4 @@ var resultsPage =
     '</div>' +
     '</div>' +
 
-    '</div>' +
     '</div>';

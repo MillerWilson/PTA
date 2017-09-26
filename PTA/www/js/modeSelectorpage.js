@@ -83,16 +83,15 @@ var testPage =
     '<div class = "page no-swipeback" data-page="quizPage">' + // identifier for callback in framework 7
     '<div class="statusbar-overlay"></div>' +
 
-    '<!-- Panels overlay-->' +
-    '<div class="panel-overlay"></div>' +
+  // panel was here
 
 
     '<div class="page-content">' +
+          '<!-- Panels overlay-->' +
+    '<div class="panel-overlay"></div>' +
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
     '<br>' +
-    '<p>Settings</p>' +
-    '<p>about</p>' +
 
     '</div>' +
     '</div>' +

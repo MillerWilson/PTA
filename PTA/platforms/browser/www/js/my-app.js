@@ -1,5 +1,7 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    panelsCloseByOutside: true
+});
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -25,11 +27,15 @@ myApp.onPageAfterAnimation("quizPage", function()
     loadQuestion();
     for(i=0; i<questionList.length;i++)
         {
+            var aTag = document.createElement('a');
             var paragraph = document.createElement('p');
-            var text= document.createTextNode("Question "+(i+1));
-            paragraph.appendChild(text);
-            console.log('sddddd');
+            aTag.setAttribute('href',"#");
+            aTag.innerHTML = "Question "+(i+1);
+            paragraph.appendChild(aTag);
+            paragraph.onclick = function(){console.log('sddddd');};
+            
             document.getElementById('panel').appendChild(paragraph);
+            
         }
     
     

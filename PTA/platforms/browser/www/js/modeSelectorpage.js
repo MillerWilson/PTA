@@ -91,8 +91,6 @@ var testPage =
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
     '<br>' +
-    '<p>Settings</p>' +
-    '<p>about</p>' +
 
     '</div>' +
     '</div>' +

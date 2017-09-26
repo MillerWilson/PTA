@@ -268,23 +268,32 @@ function loadQuestion()
     if(choiceC.value == 'undefined') // test for and hide if true/false
     {
         choiceC.style.display = 'none';
+        choiceC.disabled = true;
         document.getElementById('C_text').style.display = 'none';
     }
     else
     {
         choiceC.style.display = 'inline';
+        choiceC.disabled = false;
         document.getElementById('C_text').style.display = 'inline';
     }
     if(choiceD.value == 'undefined') // test for and hide if true/false
     {
         choiceD.style.display = 'none';
         document.getElementById('D_text').style.display = 'none';
+        choiceD.disabled = true;
     }
     else
     {
+        choiceD.disabled = false;
         choiceD.style.display = 'inline';
         document.getElementById('D_text').style.display = 'inline';
     }
+    
+   choiceALabel.style.background = '';
+   choiceBLabel.style.background = '';
+   choiceCLabel.style.background = '';
+   choiceDLabel.style.background = '';
         
 };
 function quizChanges()
@@ -337,36 +346,53 @@ function loadTestChoicePage()
 };
 function highlight()
 {
-      if(choiceA.checked && choiceA.value == questionList[currentQuestion].correctAnswer)
-            { 
-                console.log('this one was right');
-               
-                choiceALabel.style.background = 'red';
-            }
-            else
-            { 
-                if(choiceB.checked && choiceB.value == questionList[currentQuestion].correctAnswer)
-                {
-                    console.log('this one was right');
-                    choiceALabel.style.background= 'red';
-                }
-                else 
-                {
-                    if(choiceC.checked && choiceC.value == questionList[currentQuestion].correctAnswer)
-                    {
-                       console.log('this one was right');
-                        choiceALabel.style.background = 'red';
-                    }
-                    else 
-                    {
-                        if(choiceD.checked && choiceD.value == questionList[currentQuestion].correctAnswer)
-                        {
-                            console.log('this one was right');
-                            choiceALabel.style.background = 'red';
-                        }
-                    }
-                }
-            }  
+    if(choiceA.checked)
+    {                
+        if(choiceA.value == questionList[currentQuestion].correctAnswer)
+        {
+            choiceALabel.style.background = '#0bff0b';
+        }
+        else
+        {
+            choiceALabel.style.background =  '#ff3220';
+        }
+    }
+    else if(choiceB.checked)
+    {
+        if(choiceB.value == questionList[currentQuestion].correctAnswer)
+        {
+            choiceBLabel.style.background= '#0bff0b';  
+        }
+        else
+        {
+            choiceBLabel.style.background =  '#ff3220'; 
+        }           
+    }
+    else if(choiceC.checked)
+    {
+        if(choiceC.value == questionList[currentQuestion].correctAnswer)
+        {
+            console.log('choice '+ choiceC.value);
+            console.log('choice '+ questionList[currentQuestion].correctAnswer);
+            choiceCLabel.style.background= '#0bff0b';  
+        }
+        else
+        {
+            choiceCLabel.style.background =  '#ff3220'; 
+        }           
+    }
+     else if(choiceD.checked)
+    {
+        if(choiceD.value == questionList[currentQuestion].correctAnswer)
+        {
+            choiceDLabel.style.background= '#0bff0b';  
+        }
+        else
+        {
+            choiceDLabel.style.background =  '#ff3220'; 
+        }           
+    }
+            
 };
 function checkAllAnswers()
 {
@@ -386,6 +412,7 @@ function backbutton()
 {
     if(mainView.activePage.name == 'quizPage') //handles for quiz page
     {
+      
         myApp.confirm('Leaving now will lose all progress', 'Leaving Exam',function () 
             {
                  mainView.router.back();

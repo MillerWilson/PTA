@@ -89,7 +89,7 @@ var testPage =
 
     '<div class="page-content">' +
     '<div class="panel panel-right panel-cover">' +
-    '<div class="content-block">' +
+    '<div id = panel class="content-block">' +
     '<br>' +
     '<p>Settings</p>' +
     '<p>about</p>' +

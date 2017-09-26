@@ -121,24 +121,24 @@ var testPage = '<div class="navbar">' +
     '<a href="#" id = previous class="button button-big">Previous</a></div>'+
     '<div class="col-50">'+
     '<a href="#" id = next class="button button-big">Next</a></div>' +
+
     '<div>'+
     
     '</div>'+
     '</div>'+
     '</div>' +
-  
+ 
     '</div>' +
     '</div>' +
 
     '</div>' +
-<<<<<<< HEAD
-=======
+
     
     
     
     '</div>' +
     '</div>' +
->>>>>>> aae38dc38c6606db93a58e03a207f2b22af78972
+
 
     '</div>';
 

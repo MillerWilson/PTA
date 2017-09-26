@@ -130,13 +130,6 @@ var testPage = '<div class="navbar">' +
     '</div>' +
 
     '</div>' +
-      '<!-- Bottom Toolbar-->' +
-    '<div class="toolbar toolbar-bottom">' +
-    '<div class="toolbar">' +
-    
-    
-    '</div>' +
-    '</div>' +
 
     '</div>';
 

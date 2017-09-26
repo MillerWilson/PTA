@@ -23,6 +23,18 @@ $$(document).on('deviceready', function ()
 myApp.onPageAfterAnimation("quizPage", function()
 {
     loadQuestion();
+    for(i=0; i<questionList.length;i++)
+        {
+            var paragraph = document.createElement('p');
+            var text= document.createTextNode("Question "+(i+1));
+            paragraph.appendChild(text);
+            console.log('sddddd');
+            document.getElementById('panel').appendChild(paragraph);
+        }
+    
+    
+    
+    
 }); 
 
 

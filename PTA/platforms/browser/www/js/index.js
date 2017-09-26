@@ -135,7 +135,10 @@ function loadtestPage(pick)
     choiceBLabel= document.getElementById('B_text');
     choiceCLabel= document.getElementById('C_text');
     choiceDLabel= document.getElementById('D_text');
-    
+    document.getElementById('temp').onclick = function()
+    {
+       mainView.router.loadContent(resultsPage);
+    };
     
   
     document.getElementById('previous').onclick = function()
@@ -173,6 +176,11 @@ function loadtestPage(pick)
         highlight();
     }
     
+    for(i=0;i<pickerNumber;i++)
+        {
+            
+        }
+    
     
     
     
@@ -186,7 +194,6 @@ function nextQuestion() // moves to next question
         currentQuestion++;
         loadQuestion();        
     }
-    console.log(document.body.childNodes.length);
    
 };
 function previousQuestion() // moves to next question

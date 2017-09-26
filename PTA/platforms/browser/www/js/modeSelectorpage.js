@@ -81,15 +81,15 @@ var testPage = '<div class="navbar">' +
 
     '<div class = "page no-swipeback" data-page="quizPage">' + // identifier for callback in framework 7
     '<div class="statusbar-overlay"></div>' +
-   
-   '<!-- Panels overlay-->' +
+
+    '<!-- Panels overlay-->' +
     '<div class="panel-overlay"></div>' +
 
 
     '<div class="page-content">' +
     '<div class="panel panel-right panel-cover">' +
     '<div class="content-block">' +
-    '<br>'
+    '<br>' +
     '<p>Settings</p>' +
     '<p>about</p>' +
 
@@ -106,42 +106,83 @@ var testPage = '<div class="navbar">' +
     '<p id=prompt><b>Which of the following is NOT a type of motherboard expansion slot?</b> </p><br>' +
     '<div class="content-block-inner">' +
     '<form>' +
-        '<input type="radio" id=A name="choice" value="A"><label id= A_text></label> <br><br>' +
+    '<input type="radio" id=A name="choice" value="A"><label id= A_text></label> <br><br>' +
     '<input type="radio" id=B name="choice" value="B"><label id= B_text></label><br><br>' +
     '<input type="radio" id=C name="choice" value="C"><label id= C_text></label><br><br>' +
     '<input type="radio" id=D name="choice" value="D"><label id= D_text></label>' +
     '</form><br>' +
-    
+
     '</div>' +
-    '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>'+
+    '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>' +
     '<div class="page-content">' +
-    
-    '<div class="row">'+
-    '<div class ="col-50">'+
-    '<a href="#" id = previous class="button button-big">Previous</a></div>'+
-    '<div class="col-50">'+
+
+    '<div class="row">' +
+    '<div class ="col-50">' +
+    '<a href="#" id = previous class="button button-big">Previous</a></div>' +
+    '<div class="col-50">' +
     '<a href="#" id = next class="button button-big">Next</a></div>' +
-    '<div>'+
-    
-    '</div>'+
-    '</div>'+
+    '<div>' +
+
     '</div>' +
-  
     '</div>' +
     '</div>' +
 
     '</div>' +
-    
-    
-    
+    '</div>' +
+
+    '</div>' +
+
+    '<!-- Bottom Toolbar-->' +
+    '<div class="toolbar toolbar-bottom">' +
+    '<div class="toolbar">' +
+
+
     '</div>' +
     '</div>' +
 
     '</div>';
 
 
-var resultsPage = '';
+var resultsPage = ' <div class="page toolbar-fixed">' +
+    '   <div class="navbar">' +
+    '<div class="navbar-inner">' +
+    '<div class="left"></div>' +
+    '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->' +
+    '<div class="center sliding">MillerWilson PTA</div>' +
+    '<div class="right">' +
 
+    '<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '<!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->' +
+    '<div class="pages navbar-through toolbar-through">' +
+    '<!-- Page, "data-page" contains page name -->' +
+    '<div data-page="resultPage" class="page">' +
+    '<!-- Scrollable page content -->' +
+    '<div class="page-content">' +
 
-
-
+    '<div class="content-block-title">Your Final Score Is: </div>' +
+    '<!-- Inset content block -->' +
+    '<div class="content-block inset">' +
+    '<div class="content-block-inner">' +
+    '<label>' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    'Score will be here' +
+    '</label>' +
+    '</div>' +
+    '</div><br>' +
+    '<a href=# class="button button-big button-round active">Home</a>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>';

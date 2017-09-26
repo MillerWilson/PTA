@@ -19,10 +19,6 @@ $$(document).on('deviceready', function ()
     createDb();
     
 });
-function goBack(){
-    window.history.back();
-}
-
 
 myApp.onPageAfterAnimation("quizPage", function()
 {

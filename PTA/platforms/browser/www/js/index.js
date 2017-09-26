@@ -1,3 +1,5 @@
+// globals
+
 var selectedType = 'ceh'; // will default to ceh
 var questionList = [];
 var answerBank = [];
@@ -12,7 +14,9 @@ var choiceALabel;
 var choiceBLabel;
 var choiceCLabel;
 var choiceDLabel;
-loadTestChoicePage();
+loadTestChoicePage(); // initial load of test page
+
+
 function displayRecord(tx, results) // loads result set into the questionlist. used by question handler
 {   
     questionList = []; // clear question list upon new query
@@ -100,6 +104,7 @@ function loadmodepage()
     document.getElementById('returnLnk').onclick = function()
     {
         mainView.router.back();
+        loadTestChoicePage();
     }
     document.getElementById('test').onclick = function() // quiz button click function
     {
@@ -181,6 +186,7 @@ function nextQuestion() // moves to next question
         currentQuestion++;
         loadQuestion();        
     }
+    console.log(document.body.childNodes.length);
    
 };
 function previousQuestion() // moves to next question
@@ -389,9 +395,17 @@ function backbutton()
                navigator.app.exitApp();
             });    
         }
-        else
+        else 
         {
-            mainView.router.back();
+            if (mainView.activePage.name == 'modeSelect')
+            {
+                mainView.router.back();
+                loadTestChoicePage();
+            }
+            else
+            {
+                 mainView.router.back();      
+            }
         }
     }
 };

@@ -66,7 +66,8 @@ var modePage = '<div class="navbar"><div class="navbar-inner"><div class="left">
 
 
 
-var testPage = '<div class="navbar">' +
+var testPage =
+'<div class="navbar">' +
     '<div class="navbar-inner">' +
     '<div class="left"></div>' +
     '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->' +
@@ -121,7 +122,7 @@ var testPage = '<div class="navbar">' +
     '<a href="#" id = previous class="button button-big">Previous</a></div>' +
     '<div class="col-50">' +
     '<a href="#" id = next class="button button-big">Next</a></div>' +
-<<<<<<< HEAD
+
 
     '<div>'+
     
@@ -129,39 +130,20 @@ var testPage = '<div class="navbar">' +
     '</div>'+
     '</div>' +
  
-=======
+
     '<div>' +
 
     '</div>' +
->>>>>>> d58028c8b771ab135644ad47ff6dd8f5c3647688
+
     '</div>' +
     '</div>' +
 
     '</div>' +
-<<<<<<< HEAD
+
 
     
     
-    
-=======
->>>>>>> d58028c8b771ab135644ad47ff6dd8f5c3647688
-    '</div>' +
-
-    '</div>' +
-<<<<<<< HEAD
-
-=======
->>>>>>> d58028c8b771ab135644ad47ff6dd8f5c3647688
-
-   /* '<!-- Bottom Toolbar-->' +
-    '<div class="toolbar toolbar-bottom">' +
-    '<div class="toolbar">' +
-
-
-    '</div>' +
-    '</div>' +*/
-
-    '</div>';
+    '</div>' ;
 
 
 var resultsPage = ' <div class="page toolbar-fixed">' +

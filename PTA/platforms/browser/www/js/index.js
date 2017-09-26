@@ -355,7 +355,7 @@ function highlight()
                     if(choiceC.checked && choiceC.value == questionList[currentQuestion].correctAnswer)
                     {
                        console.log('this one was right');
-                        choiceALabel.style.background = 'hsla(125, 100%, 35%, 0.59)';
+                        choiceALabel.style.background = '0x46ff55';
                     }
                     else 
                     {

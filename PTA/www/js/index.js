@@ -428,7 +428,7 @@ function loadResultsPage()
 };
 function panelLink(para)
 {
-    currentQuestion = para.id;
+    currentQuestion = parseInt(para.id);
     loadQuestion();
     
 };

@@ -89,7 +89,6 @@ var testPage = '<div class="navbar">' +
     '<div class="page-content">' +
     '<div class="panel panel-right panel-cover">' +
     '<div class="content-block">' +
-    '<br>'
     '<p>Settings</p>' +
     '<p>about</p>' +
 
@@ -131,7 +130,9 @@ var testPage = '<div class="navbar">' +
     '</div>' +
 
     '</div>' +
-    
+      '<!-- Bottom Toolbar-->' +
+    '<div class="toolbar toolbar-bottom">' +
+    '<div class="toolbar">' +
     
     
     '</div>' +

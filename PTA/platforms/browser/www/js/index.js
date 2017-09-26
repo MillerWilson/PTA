@@ -176,13 +176,6 @@ function loadtestPage(pick)
         highlight();
     }
     
-    for(i=0;i<pickerNumber;i++)
-        {
-            
-        }
-    
-    
-    
     
 
 };
@@ -346,25 +339,30 @@ function highlight()
 {
       if(choiceA.checked && choiceA.value == questionList[currentQuestion].correctAnswer)
             { 
-               console.log('this one was right');
+                console.log('this one was right');
+               
+                choiceALabel.style.background = 'green';
             }
             else
             { 
                 if(choiceB.checked && choiceB.value == questionList[currentQuestion].correctAnswer)
                 {
                     console.log('this one was right');
+                    choiceALabel.style.background= 'green';
                 }
                 else 
                 {
                     if(choiceC.checked && choiceC.value == questionList[currentQuestion].correctAnswer)
                     {
                        console.log('this one was right');
+                        choiceALabel.style.background = 'green';
                     }
                     else 
                     {
                         if(choiceD.checked && choiceD.value == questionList[currentQuestion].correctAnswer)
                         {
                             console.log('this one was right');
+                            choiceALabel.style.background = 'green';
                         }
                     }
                 }

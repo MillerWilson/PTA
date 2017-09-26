@@ -341,28 +341,28 @@ function highlight()
             { 
                 console.log('this one was right');
                
-                choiceALabel.style.background = '0x46ff55';
+                choiceALabel.style.background = 'red';
             }
             else
             { 
                 if(choiceB.checked && choiceB.value == questionList[currentQuestion].correctAnswer)
                 {
                     console.log('this one was right');
-                    choiceALabel.style.background= '0x46ff55';
+                    choiceALabel.style.background= 'red';
                 }
                 else 
                 {
                     if(choiceC.checked && choiceC.value == questionList[currentQuestion].correctAnswer)
                     {
                        console.log('this one was right');
-                        choiceALabel.style.background = '0x46ff55';
+                        choiceALabel.style.background = 'red';
                     }
                     else 
                     {
                         if(choiceD.checked && choiceD.value == questionList[currentQuestion].correctAnswer)
                         {
                             console.log('this one was right');
-                            choiceALabel.style.background = '0x46ff55';
+                            choiceALabel.style.background = 'red';
                         }
                     }
                 }

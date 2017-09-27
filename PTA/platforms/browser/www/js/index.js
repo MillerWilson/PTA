@@ -476,7 +476,7 @@ function backbutton()
 };
 function submitAll()
 {
-    myApp.confirm('Are you sure you want to submit the test', 'Submit Exam',function () 
+    myApp.confirm('Are you sure you want to submit the test?', 'Submit Exam',function () 
             {
                  loadResultsPage();
             });    

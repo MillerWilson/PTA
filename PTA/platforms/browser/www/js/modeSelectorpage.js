@@ -143,7 +143,6 @@ var testPage =
 
     '</div>' +
 
-
     '<div class="toolbar">' +
     '<div class="toolbar-inner">' +
         '<p></p>' +

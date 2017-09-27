@@ -557,7 +557,7 @@ function populateResults()
         
     };   
     var score = checkAllAnswers();
-    document.getElementById('resultTitle').innerHTML = 'Your final score is: '+ score;
+    document.getElementById('resultTitle').innerHTML = 'Your final score is: '+ score.toFixed(2);
     if (score==100)
     {
         document.getElementById('resultlbl').innerHTML = 'Congrats on the perfect score!!!!';

@@ -138,6 +138,7 @@ function loadtestPage(pick)
     {
         nextQuestion();
     };
+    document.getElementById('returnLnk').onclick = backbutton;
         
 
 };
@@ -269,6 +270,7 @@ function loadQuestion()
         document.getElementById('temp').style.display = 'none';   
     }
         
+    document.getElementById('returnLnk').onclick = backbutton;
 };
 function quizChanges()
 {

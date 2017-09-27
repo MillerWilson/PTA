@@ -69,7 +69,10 @@ var modePage = '<div class="navbar"><div class="navbar-inner"><div class="left">
 var testPage =
     '<div class="navbar">' +
     '<div class="navbar-inner">' +
-    '<div class="left"></div>' +
+    '<div class="left">' +
+    '<i class="icon icon-back"></i>' +
+    '<p id= returnLnk><a href="#"> Exit</a></p>' +
+    '</div>' +
     '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->' +
     '<div class="center sliding" id = questionTitle>Whatever Question number</div>' +
     '<div class="right">' +
@@ -87,11 +90,10 @@ var testPage =
 
 
     '<div class="page-content">' +
-<<<<<<< HEAD
+
     '<!-- Panels overlay-->' +
-=======
-          '<!-- Panels overlay-->' +
->>>>>>> 1218313765fb673444af13810cfb4611edb60327
+
+
     '<div class="panel-overlay"></div>' +
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
@@ -165,8 +167,6 @@ var resultsPage =
     '<h3>Final Score</h3>' +
     '</div>' +
     '<div class="right">' +
-
-    '<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>' +
     '</div>' +
     '</div>' +
     '</div>' + // here is okay
@@ -185,18 +185,8 @@ var resultsPage =
     '<a href="#tab2" class="tab-link button">Explanations</a>' +
     '</div>' +
     '</div>' +
-<<<<<<< HEAD
 
-    //<!-- Tabs, tabs wrapper -->
-    '<div class="tabs">' +
-    //<!-- Tab 1, active by default -->
-    '<div id="tab1" class="tab active">' +
-    '<div class="content-block">' +
-    '<div class="content-block-title">Your Final Score Is: </div>' +
-    '<div class="content-block inset">' +
 
-=======
-        
      //<!-- Tabs, tabs wrapper -->
      '<div class="tabs">' +
      //<!-- Tab 1, active by default -->
@@ -204,8 +194,7 @@ var resultsPage =
      '<div class="content-block">' +
      '<div id = resultTitle class="content-block-title">Your Final Score Is: </div>' +
      '<div class="content-block inset">' +
-        
->>>>>>> b3b9487f577c394a827ab38ee6ba0e08aed2c968
+
     '<div class="content-block-inner">' +
 
     '<label>' +
@@ -235,23 +224,15 @@ var resultsPage =
     '</div>' +
     //<!-- Tab 2 -->
     '<div id="tab2" class="tab">' +
-<<<<<<< HEAD
-    '<div class="content-block">' +
-    '<div class="content-block-inner">' +
-    '<label>Question goes here</label><br>' +
-    '<label>Answer will be here</label><br>' +
-    '<label>And the Explanation will be here</label>' +
-=======
+
+   
     '<div id =explain class="content-block">' +
     '<p>This is tab 2 content</p>' +
->>>>>>> b3b9487f577c394a827ab38ee6ba0e08aed2c968
-
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
 
 
+    '</div>' +
+    '</div>' +
+    '</div>' +
     '</div>' +
 
     '</div>';

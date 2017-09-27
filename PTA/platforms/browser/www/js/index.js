@@ -101,11 +101,7 @@ function loadmodepage()
         quizMode = true;
         loadtestPage(pickerDevice.value);   
     };
-    document.getElementById('returnLnk').onclick = function()
-    {
-        mainView.router.back();
-        loadTestChoicePage();
-    }
+    document.getElementById('returnLnk').onclick = backbutton;
     document.getElementById('test').onclick = function() // quiz button click function
     {
         quizMode = false;
@@ -263,6 +259,15 @@ function loadQuestion()
    choiceBLabel.style.background = '';
    choiceCLabel.style.background = '';
    choiceDLabel.style.background = '';
+   document.getElementById('qlbl').innerHTML = "Question "+(currentQuestion+1)+" out of "+ questionList.length;
+    if (currentQuestion+1 == questionList.length)
+    {
+        document.getElementById('temp').style.display = 'inline';        
+    }
+    else
+    {
+        document.getElementById('temp').style.display = 'none';   
+    }
         
 };
 function quizChanges()
@@ -430,7 +435,7 @@ function checkAllAnswers()
     return score *100;
 };
 function backbutton()
-{console.log(mainView.activePage.name);
+{
     if(mainView.activePage.name == 'quizPage') //handles for quiz page
     {
       

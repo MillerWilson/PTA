@@ -120,7 +120,7 @@ var testPage =
 
     '</div>' +
         
-    '<p> <a href = # class= "button" id = temp> temp button</a></p>' +
+    '<p> <a href = # class= "button button-big" id = temp> Submit </a></p>' +
     '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>' +
     '<div class="page-content">' +
 
@@ -147,7 +147,7 @@ var testPage =
     '<div class="toolbar">' +
     '<div class="toolbar-inner">' +
         '<p></p>' +
-        '<label>__ out of / __</label>' +
+        '<label id = qlbl>__ out of / __</label>' +
         '<p></p>'+
     '</div>' +
     '</div>' +
@@ -221,13 +221,15 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
-<<<<<<< HEAD:PTA/www/js/pages.js
+<<<<<<< HEAD
+
     '<a href="../index.html" id = home class="item-link list-button">Home</a>'+        
+
 =======
+>>>>>>> 387261e364e80b8ef074bb06b96a766a8594d7ee
 
     '<a href="#" id = home class="item-link list-button">Home</a>'+        
 
->>>>>>> e539fd53f858af7b33331480b708391fbfe648c7:PTA/platforms/browser/www/js/modeSelectorpage.js
     '</li>' +
     '</ul>' +
     '</div>' +
@@ -243,9 +245,13 @@ var resultsPage =
     '</div>' +
     '</div>' +
     '</div>' +
-<<<<<<< HEAD:PTA/www/js/pages.js
+<<<<<<< HEAD
+
    
+=======
+>>>>>>> 387261e364e80b8ef074bb06b96a766a8594d7ee
     '</div>';
+        
  var homePage =   '<div class="navbar">'+
 
                 '<div class="navbar-inner">'+
@@ -286,7 +292,9 @@ var resultsPage =
 
                     '</div>'+
                 '</div>';
-=======
->>>>>>> e539fd53f858af7b33331480b708391fbfe648c7:PTA/platforms/browser/www/js/modeSelectorpage.js
+<<<<<<< HEAD
+
 
     '</div>';
+=======
+>>>>>>> 387261e364e80b8ef074bb06b96a766a8594d7ee

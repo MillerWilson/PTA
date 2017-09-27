@@ -522,11 +522,11 @@ function populateResults()
   for(i=0, d=questionList.length; i<d;i++)
     {
         var top = document.createElement('p');
-        top.innerHTML = "Question";
+        top.innerHTML = "<b>Question</b>";
         var ans = document.createElement('p');
-        ans.innerHTML = "Correct Answer";
+        ans.innerHTML = "<b>Correct Answer</b>";
         var exp = document.createElement('p');
-        exp.innerHTML = "Explanation";
+        exp.innerHTML = "<b>Explanation</b>";
    
     
         var htmlbreak = document.createElement('br');

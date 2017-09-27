@@ -430,7 +430,7 @@ function checkAllAnswers()
     return score *100;
 };
 function backbutton()
-{
+{console.log(mainView.activePage.name);
     if(mainView.activePage.name == 'quizPage') //handles for quiz page
     {
       
@@ -457,7 +457,8 @@ function backbutton()
             }
             else if(mainView.activePage.name == 'resultsPage')
             {
-                mainView.router.back("home")
+                mainView.router.loadContent(homePage);
+                loadTestChoicePage();
             }
             else
             {
@@ -528,8 +529,7 @@ function populateResults()
         exp.innerHTML = "<b>Explanation</b>";
    
     
-    var htmlbreak = document.createElement('br');
-    console.log('content check A');
+        var htmlbreak = document.createElement('br');
         var quest = document.createElement('p'); 
         var correct = document.createElement('p');
         var explan = document.createElement('p');

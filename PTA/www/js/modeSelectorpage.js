@@ -196,8 +196,13 @@ var resultsPage =
      '<div class="content-block inset">' +
 
     '<div class="content-block-inner">' +
+<<<<<<< HEAD
 
     '<label>' +
+=======
+        
+    '<label id = resultlbl>' +
+>>>>>>> ed76b5157ca2ebdcf69a573e8c5c8e169a052b88
     'Score will be here.' +
     'Score will be here.' +
     'Score will be here.' +
@@ -216,7 +221,11 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
+<<<<<<< HEAD
     '<a href="#" class="item-link list-button">Home</a>' +
+=======
+    '<a href="#" id = home class="item-link list-button">Home</a>'+        
+>>>>>>> ed76b5157ca2ebdcf69a573e8c5c8e169a052b88
     '</li>' +
     '</ul>' +
     '</div>' +
@@ -227,9 +236,12 @@ var resultsPage =
 
    
     '<div id =explain class="content-block">' +
+<<<<<<< HEAD
     '<p>This is tab 2 content</p>' +
 
 
+=======
+>>>>>>> ed76b5157ca2ebdcf69a573e8c5c8e169a052b88
     '</div>' +
     '</div>' +
     '</div>' +

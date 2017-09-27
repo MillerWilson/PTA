@@ -71,7 +71,7 @@ var testPage =
     '<div class="navbar-inner">' +
     '<div class="left">' +
     '<i class="icon icon-back"></i>' +
-    '<p id= returnLnk><a href="#"> Exit</a></p>' +
+    '<p id= returnLnk onclick = "backbutton()"><a id =returnLnk href="#"> Exit</a></p>' +
     '</div>' +
     '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->' +
     '<div class="center sliding" id = questionTitle>Whatever Question number</div>' +
@@ -120,7 +120,7 @@ var testPage =
 
     '</div>' +
         
-    '<p> <a href = # class= "button button-big" id = temp> Submit </a></p>' +
+    '<p> <a href = # class= "button active" id = temp> Submit </a></p>' +
     '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>' +
     '<div class="page-content">' +
 
@@ -221,10 +221,6 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
-
-    '<a href="../index.html" id = home class="item-link list-button">Home</a>'+        
-
-
 
     '<a href="#" id = home class="item-link list-button">Home</a>'+        
 

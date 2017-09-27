@@ -526,7 +526,7 @@ function populateResults()
 
   for(i=0, d=questionList.length; i<d;i++)
     {
-        console.log('content check B');
+        
         var quest = document.createElement('p'); 
         var correct = document.createElement('p');
         var explan = document.createElement('p');
@@ -541,7 +541,9 @@ function populateResults()
         document.getElementById('explain').appendChild(correct);
         document.getElementById('explain').appendChild(exp);
         document.getElementById('explain').appendChild(explan);
-        document.getElementById('explain').appendChild(br);
+        
+        document.getElementById('explain').appendChild(htmlbreak);
+        console.log('content check B');
        
         
     };   

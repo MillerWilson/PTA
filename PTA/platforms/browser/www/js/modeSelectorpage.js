@@ -88,7 +88,7 @@ var testPage =
 
     '<div class="page-content">' +
           '<!-- Panels overlay-->' +
-    //'<div class="panel-overlay"></div>' +
+    '<div class="panel-overlay"></div>' +
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
     '<br>' +

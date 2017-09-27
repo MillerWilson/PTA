@@ -88,7 +88,7 @@ var testPage =
 
     '<div class="page-content">' +
           '<!-- Panels overlay-->' +
-    //'<div class="panel-overlay"></div>' +
+    '<div class="panel-overlay"></div>' +
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
     '<br>' +
@@ -184,7 +184,7 @@ var resultsPage =
      //<!-- Tab 1, active by default -->
      '<div id="tab1" class="tab active">' +
      '<div class="content-block">' +
-     '<div class="content-block-title">Your Final Score Is: </div>' +
+     '<div id = resultTitle class="content-block-title">Your Final Score Is: </div>' +
      '<div class="content-block inset">' +
         
     '<div class="content-block-inner">' +
@@ -216,7 +216,7 @@ var resultsPage =
     '</div>' +
     //<!-- Tab 2 -->
     '<div id="tab2" class="tab">' +
-    '<div class="content-block">' +
+    '<div id =explain class="content-block">' +
     '<p>This is tab 2 content</p>' +
 
     '</div>' +

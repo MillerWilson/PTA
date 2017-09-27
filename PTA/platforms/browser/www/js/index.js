@@ -22,7 +22,7 @@ function displayRecord(tx, results) // loads result set into the questionlist. u
     questionList = []; // clear question list upon new query
     console.log('This many questions in the table: '+ results.rows.length); 
     console.log("loading questions for test");
-    for(i=0;i<results.rows.length && i<pickerNumber;++i)
+    for(i=0, c= results.rows.length; i<c && i<pickerNumber;++i)
         {
             questionList[i]=
             {
@@ -127,17 +127,10 @@ function loadtestPage(pick)
     currentQuestion =0;
     quizChanges();
    
-    choiceA = document.getElementById('A');
-    choiceB = document.getElementById('B');
-    choiceC = document.getElementById('C');
-    choiceD = document.getElementById('D');
-    choiceALabel= document.getElementById('A_text');
-    choiceBLabel= document.getElementById('B_text');
-    choiceCLabel= document.getElementById('C_text');
-    choiceDLabel= document.getElementById('D_text');
+   
     document.getElementById('temp').onclick = function()
     {
-       mainView.router.loadContent(resultsPage);
+       submitAll();
     };
     
   
@@ -149,34 +142,7 @@ function loadtestPage(pick)
     {
         nextQuestion();
     };
-    
-    // click handlers for the questions
-    choiceA.onclick = highlight;
-    choiceB.onclick = highlight;
-    choiceC.onclick = highlight;
-    choiceD.onclick = highlight;
-    choiceALabel.onclick = function()
-    {
-        choiceA.checked = true;
-        highlight();
-    }
-    choiceBLabel.onclick = function()
-    {
-        choiceB.checked = true;
-        highlight();
-    }
-    choiceCLabel.onclick = function()
-    {
-        choiceC.checked = true;
-        highlight();
-    }
-    choiceDLabel.onclick = function()
-    {
-        choiceD.checked = true;
-        highlight();
-    }
-    
-    
+        
 
 };
 function nextQuestion() // moves to next question
@@ -267,6 +233,9 @@ function loadQuestion()
     }
     if(choiceC.value == 'undefined') // test for and hide if true/false
     {
+        console.log('This is the A value: '+ choiceA.value);
+        console.log('This is the B value: '+ choiceB.value);
+        console.log('The listed correct answer is: '+  questionList[currentQuestion].correctAnswer);
         choiceC.style.display = 'none';
         choiceC.disabled = true;
         document.getElementById('C_text').style.display = 'none';
@@ -298,17 +267,70 @@ function loadQuestion()
 };
 function quizChanges()
 {
+    
+    choiceA = document.getElementById('A');
+    choiceB = document.getElementById('B');
+    choiceC = document.getElementById('C');
+    choiceD = document.getElementById('D');
+    choiceALabel= document.getElementById('A_text');
+    choiceBLabel= document.getElementById('B_text');
+    choiceCLabel= document.getElementById('C_text');
+    choiceDLabel= document.getElementById('D_text');
+    
      if(quizMode)
     {
+         
         document.getElementById('submit').innerHTML = 'Explanation';// change the submit button if it's a quiz
         document.getElementById('submit').onclick = function()
         {
             myApp.alert(questionList[currentQuestion].explanation, 'Explanation');
         };
+        choiceA.onclick = highlight;
+        choiceB.onclick = highlight;
+        choiceC.onclick = highlight;
+        choiceD.onclick = highlight;
+        
+        choiceALabel.onclick = function()
+        {
+            choiceA.checked = true;
+            highlight();
+        }
+        choiceBLabel.onclick = function()
+        {
+            choiceB.checked = true;
+            highlight();
+        }
+        choiceCLabel.onclick = function()
+        {
+            choiceC.checked = true;
+            highlight();
+        }
+        choiceDLabel.onclick = function()
+        {
+            choiceD.checked = true;
+            highlight();
+        }
     }
     else
     {
-         document.getElementById('submit').style.display = 'none';
+        document.getElementById('submit').style.display = 'none';
+        choiceALabel.onclick = function()
+        {
+            choiceA.checked = true;
+        }
+        choiceBLabel.onclick = function()
+        {
+            choiceB.checked = true;
+        }
+        choiceCLabel.onclick = function()
+        {
+            choiceC.checked = true;
+        }
+        choiceDLabel.onclick = function()
+        {
+            choiceD.checked = true;
+        }
+        pickerNumber = 25;
     }
    
     
@@ -323,20 +345,19 @@ function loadTestChoicePage()
     };
     document.getElementById('a+s').onclick = function()
     {
-        console.log("button was clicked so now");
         selectedType= 'A+S';
         mainView.router.loadContent(modePage); // changes the page to the mode page
         loadmodepage();
 
     };
-    document.getElementById('n+').onclick = function()
+    document.getElementById('n').onclick = function()
     {
         console.log("button was clicked so now");
         selectedType= 'N+';
         mainView.router.loadContent(modePage); // changes the page to the mode page
         loadmodepage();
     };
-    document.getElementById('s+').onclick = function()
+    document.getElementById('s').onclick = function()
     {
         console.log("button was clicked so now");
         selectedType= 'S+';
@@ -398,7 +419,7 @@ function checkAllAnswers()
 {
     var score = 0;
     var right = 0;
-    for(i=0;i<questionList.length;++i)
+    for(i=0, c= questionList.length;i<c;++i)
         {
             if(answerBank[i] == questionList[i].correctAnswer)
             {
@@ -450,7 +471,7 @@ function submitAll()
 };
 function loadResultsPage()
 {
-    //mainView.router.loadContent(resultsPage);
+    mainView.router.loadContent(resultsPage);
     //document.getElementById('results').innerHTML = 'Congratulations you made '+ checkAllAnswers()+'%';
 };
 function panelLink(para)
@@ -462,7 +483,7 @@ function panelLink(para)
 function loadpanel()
 {
    
-    for(i=0; i<questionList.length;i++)
+    for(i=0, d =questionList.length; i<d;i++)
     {
         var aTag = document.createElement('a');
         var paragraph = document.createElement('p'); 
@@ -490,4 +511,39 @@ function loadpanel()
     };
             
     document.getElementById('panel').appendChild(paragraph);
+};
+function populateResults()
+{
+    var top = document.createElement('p');
+    
+    var ans = document.createElement('p');
+    var exp = document.createElement('p');
+    top.innerHTML = "Question";
+    ans.innerHTML = "Correct Answer";
+    exp.innerHTML = "Explanation";
+    var htmlbreak = document.createElement('br');
+    console.log('content check A');
+
+  for(i=0, d=questionList.length; i<d;i++)
+    {
+        console.log('content check B');
+        var quest = document.createElement('p'); 
+        var correct = document.createElement('p');
+        var explan = document.createElement('p');
+       
+        quest.innerHTML = questionList[i].prompt;
+        correct.innerHTML = questionList[i].correctAnswer;
+        explan.innerHTML = questionList[i].explanation;
+            
+        document.getElementById('explain').appendChild(top);
+        document.getElementById('explain').appendChild(quest);
+        document.getElementById('explain').appendChild(ans);
+        document.getElementById('explain').appendChild(correct);
+        document.getElementById('explain').appendChild(exp);
+        document.getElementById('explain').appendChild(explan);
+        document.getElementById('explain').appendChild(br);
+       
+        
+    };   
+    
 };

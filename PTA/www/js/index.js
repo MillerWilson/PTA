@@ -455,9 +455,13 @@ function backbutton()
                 mainView.router.back();
                 loadTestChoicePage();
             }
+            else if(mainView.activePage.name == 'resultsPage')
+            {
+                mainView.router.back("home")
+            }
             else
             {
-                 mainView.router.back();      
+                mainView.router.back();
             }
         }
     }
@@ -514,19 +518,18 @@ function loadpanel()
 };
 function populateResults()
 {
-    var top = document.createElement('p');
-    
-    var ans = document.createElement('p');
-    var exp = document.createElement('p');
-    top.innerHTML = "Question";
-    ans.innerHTML = "Correct Answer";
-    exp.innerHTML = "Explanation";
-    var htmlbreak = document.createElement('br');
-    console.log('content check A');
-
   for(i=0, d=questionList.length; i<d;i++)
     {
-        
+        var top = document.createElement('p');
+        top.innerHTML = "Question";
+        var ans = document.createElement('p');
+        ans.innerHTML = "Correct Answer";
+        var exp = document.createElement('p');
+        exp.innerHTML = "Explanation";
+   
+    
+    var htmlbreak = document.createElement('br');
+    console.log('content check A');
         var quest = document.createElement('p'); 
         var correct = document.createElement('p');
         var explan = document.createElement('p');
@@ -541,11 +544,29 @@ function populateResults()
         document.getElementById('explain').appendChild(correct);
         document.getElementById('explain').appendChild(exp);
         document.getElementById('explain').appendChild(explan);
-        
         document.getElementById('explain').appendChild(htmlbreak);
-        console.log('content check B');
+      
        
         
     };   
+    var score = checkAllAnswers();
+    document.getElementById('resultTitle').innerHTML = 'Your final score is: '+ score;
+    if (score==100)
+    {
+        document.getElementById('resultlbl').innerHTML = 'Congrats on the perfect score!!!!';
+    }
+    else if(score>80)
+    {
+        document.getElementById('resultlbl').innerHTML = "That's a really impressive score you may be ready soon.";
+    }
+    else if(score>50)
+    {
+        document.getElementById('resultlbl').innerHTML = "Before taking the test be sure to study more.";
+    }
+    else
+    {
+        document.getElementById('resultlbl').innerHTML = "More preparation is required before attempting the exam.";
+    }
+    document.getElementById('home').onclick = backbutton;
     
 };

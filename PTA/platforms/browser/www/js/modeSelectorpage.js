@@ -189,7 +189,7 @@ var resultsPage =
         
     '<div class="content-block-inner">' +
         
-    '<label>' +
+    '<label id = resultlbl>' +
     'Score will be here.' +
     'Score will be here.' +
     'Score will be here.' +
@@ -208,7 +208,7 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
-    '<a href="#" class="item-link list-button">Home</a>'+        
+    '<a href="#" id = home class="item-link list-button">Home</a>'+        
     '</li>' +
     '</ul>' +
     '</div>' +
@@ -217,8 +217,6 @@ var resultsPage =
     //<!-- Tab 2 -->
     '<div id="tab2" class="tab">' +
     '<div id =explain class="content-block">' +
-    '<p>This is tab 2 content</p>' +
-
     '</div>' +
     '</div>' +
     '</div>' +

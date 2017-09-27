@@ -120,7 +120,7 @@ var testPage =
 
     '</div>' +
         
-    '<p> <a href = # class= "button button-big" id = temp> Submit </a></p>' +
+    '<p> <a href = # class= "button active" id = temp> Submit </a></p>' +
     '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>' +
     '<div class="page-content">' +
 
@@ -221,12 +221,6 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
-<<<<<<< HEAD
-
-    '<a href="../index.html" id = home class="item-link list-button">Home</a>'+        
-
-=======
->>>>>>> 387261e364e80b8ef074bb06b96a766a8594d7ee
 
     '<a href="#" id = home class="item-link list-button">Home</a>'+        
 
@@ -245,11 +239,7 @@ var resultsPage =
     '</div>' +
     '</div>' +
     '</div>' +
-<<<<<<< HEAD
 
-   
-=======
->>>>>>> 387261e364e80b8ef074bb06b96a766a8594d7ee
     '</div>';
         
  var homePage =   '<div class="navbar">'+
@@ -292,9 +282,5 @@ var resultsPage =
 
                     '</div>'+
                 '</div>';
-<<<<<<< HEAD
-
 
     '</div>';
-=======
->>>>>>> 387261e364e80b8ef074bb06b96a766a8594d7ee

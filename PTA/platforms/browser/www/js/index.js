@@ -262,7 +262,7 @@ function loadQuestion()
    document.getElementById('qlbl').innerHTML = "Question "+(currentQuestion+1)+" out of "+ questionList.length;
     if (currentQuestion+1 == questionList.length)
     {
-        document.getElementById('temp').style.display = 'inline';        
+        document.getElementById('temp').style.display = '';        
     }
     else
     {

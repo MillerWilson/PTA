@@ -127,14 +127,7 @@ function loadtestPage(pick)
     currentQuestion =0;
     quizChanges();
    
-    choiceA = document.getElementById('A');
-    choiceB = document.getElementById('B');
-    choiceC = document.getElementById('C');
-    choiceD = document.getElementById('D');
-    choiceALabel= document.getElementById('A_text');
-    choiceBLabel= document.getElementById('B_text');
-    choiceCLabel= document.getElementById('C_text');
-    choiceDLabel= document.getElementById('D_text');
+   
     document.getElementById('temp').onclick = function()
     {
        mainView.router.loadContent(resultsPage);
@@ -149,34 +142,7 @@ function loadtestPage(pick)
     {
         nextQuestion();
     };
-    
-    // click handlers for the questions
-    choiceA.onclick = highlight;
-    choiceB.onclick = highlight;
-    choiceC.onclick = highlight;
-    choiceD.onclick = highlight;
-    choiceALabel.onclick = function()
-    {
-        choiceA.checked = true;
-        highlight();
-    }
-    choiceBLabel.onclick = function()
-    {
-        choiceB.checked = true;
-        highlight();
-    }
-    choiceCLabel.onclick = function()
-    {
-        choiceC.checked = true;
-        highlight();
-    }
-    choiceDLabel.onclick = function()
-    {
-        choiceD.checked = true;
-        highlight();
-    }
-    
-    
+        
 
 };
 function nextQuestion() // moves to next question
@@ -298,17 +264,69 @@ function loadQuestion()
 };
 function quizChanges()
 {
+    
+    choiceA = document.getElementById('A');
+    choiceB = document.getElementById('B');
+    choiceC = document.getElementById('C');
+    choiceD = document.getElementById('D');
+    choiceALabel= document.getElementById('A_text');
+    choiceBLabel= document.getElementById('B_text');
+    choiceCLabel= document.getElementById('C_text');
+    choiceDLabel= document.getElementById('D_text');
+    
      if(quizMode)
     {
+         
         document.getElementById('submit').innerHTML = 'Explanation';// change the submit button if it's a quiz
         document.getElementById('submit').onclick = function()
         {
             myApp.alert(questionList[currentQuestion].explanation, 'Explanation');
         };
+        choiceA.onclick = highlight;
+        choiceB.onclick = highlight;
+        choiceC.onclick = highlight;
+        choiceD.onclick = highlight;
+        
+        choiceALabel.onclick = function()
+        {
+            choiceA.checked = true;
+            highlight();
+        }
+        choiceBLabel.onclick = function()
+        {
+            choiceB.checked = true;
+            highlight();
+        }
+        choiceCLabel.onclick = function()
+        {
+            choiceC.checked = true;
+            highlight();
+        }
+        choiceDLabel.onclick = function()
+        {
+            choiceD.checked = true;
+            highlight();
+        }
     }
     else
     {
-         document.getElementById('submit').style.display = 'none';
+        document.getElementById('submit').style.display = 'none';
+        choiceALabel.onclick = function()
+        {
+            choiceA.checked = true;
+        }
+        choiceBLabel.onclick = function()
+        {
+            choiceB.checked = true;
+        }
+        choiceCLabel.onclick = function()
+        {
+            choiceC.checked = true;
+        }
+        choiceDLabel.onclick = function()
+        {
+            choiceD.checked = true;
+        }
     }
    
     
@@ -323,20 +341,19 @@ function loadTestChoicePage()
     };
     document.getElementById('a+s').onclick = function()
     {
-        console.log("button was clicked so now");
         selectedType= 'A+S';
         mainView.router.loadContent(modePage); // changes the page to the mode page
         loadmodepage();
 
     };
-    document.getElementById('n+').onclick = function()
+    document.getElementById('n').onclick = function()
     {
         console.log("button was clicked so now");
         selectedType= 'N+';
         mainView.router.loadContent(modePage); // changes the page to the mode page
         loadmodepage();
     };
-    document.getElementById('s+').onclick = function()
+    document.getElementById('s').onclick = function()
     {
         console.log("button was clicked so now");
         selectedType= 'S+';

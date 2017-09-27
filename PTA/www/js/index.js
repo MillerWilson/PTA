@@ -22,7 +22,7 @@ function displayRecord(tx, results) // loads result set into the questionlist. u
     questionList = []; // clear question list upon new query
     console.log('This many questions in the table: '+ results.rows.length); 
     console.log("loading questions for test");
-    for(i=0;i<results.rows.length && i<pickerNumber;++i)
+    for(i=0, c= results.rows.length; i<c && i<pickerNumber;++i)
         {
             questionList[i]=
             {
@@ -130,7 +130,7 @@ function loadtestPage(pick)
    
     document.getElementById('temp').onclick = function()
     {
-       mainView.router.loadContent(resultsPage);
+       submitAll();
     };
     
   
@@ -471,7 +471,7 @@ function submitAll()
 };
 function loadResultsPage()
 {
-    //mainView.router.loadContent(resultsPage);
+    mainView.router.loadContent(resultsPage);
     //document.getElementById('results').innerHTML = 'Congratulations you made '+ checkAllAnswers()+'%';
 };
 function panelLink(para)
@@ -483,7 +483,7 @@ function panelLink(para)
 function loadpanel()
 {
    
-    for(i=0; i<questionList.length;i++)
+    for(i=0, d =questionList.length; i<d;i++)
     {
         var aTag = document.createElement('a');
         var paragraph = document.createElement('p'); 

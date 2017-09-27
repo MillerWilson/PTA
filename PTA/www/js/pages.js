@@ -221,9 +221,13 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
+<<<<<<< HEAD:PTA/www/js/pages.js
+    '<a href="../index.html" id = home class="item-link list-button">Home</a>'+        
+=======
 
     '<a href="#" id = home class="item-link list-button">Home</a>'+        
 
+>>>>>>> e539fd53f858af7b33331480b708391fbfe648c7:PTA/platforms/browser/www/js/modeSelectorpage.js
     '</li>' +
     '</ul>' +
     '</div>' +
@@ -239,5 +243,50 @@ var resultsPage =
     '</div>' +
     '</div>' +
     '</div>' +
+<<<<<<< HEAD:PTA/www/js/pages.js
+   
+    '</div>';
+ var homePage =   '<div class="navbar">'+
+
+                '<div class="navbar-inner">'+
+                    '<div class="left"></div>'+
+                    '<div class="center sliding">MillerWilson PTA</div>'+
+                    '<div class="right"></div>'+
+
+
+                '</div>'+
+            '</div>'+
+
+
+'<div data-page="home" class="page">'+
+                    '<!-- Scrollable page content -->'+
+                    '<div class="page-content">'+
+                        '<p>'+
+                            '&emsp;'+
+
+                            '<blockquote>'+
+                                '<h3>'+
+                                    'Please select the type of test that you would like to take.</h3>'+
+                            '</blockquote>'+
+
+
+                            '<div class="content-block" align="center">'+
+                                '<br><br>'+
+                                '<!-- scrollable list, just in case more test need to be added-->'+
+                                '<div style="height:300px;width:200px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">'+
+                                    '<ul style="list-style-type:none" align="center">'+
+                                        '<li id=a+h><a href="#">Comptia A+ Hardware</a></li><br>'+
+                                        '<li id=a+s><a href="#">Comptia A+ Software</a></li><br>'+
+                                        '<li id=n +><a href="#">Comptia Network Security</a></li><br>'+
+                                        '<li id=s +><a href="#">Comptia Security +</a></li><br>'+
+                                    '</ul>'+
+                                '</div>'+
+                            '</div>'+
+
+
+                    '</div>'+
+                '</div>';
+=======
+>>>>>>> e539fd53f858af7b33331480b708391fbfe648c7:PTA/platforms/browser/www/js/modeSelectorpage.js
 
     '</div>';

@@ -69,7 +69,10 @@ var modePage = '<div class="navbar"><div class="navbar-inner"><div class="left">
 var testPage =
     '<div class="navbar">' +
     '<div class="navbar-inner">' +
-    '<div class="left"></div>' +
+    '<div class="left">' +
+    '<i class="icon icon-back"></i>' +
+    '<p id= returnLnk><a href="#"> Exit</a></p>' +
+    '</div>' +
     '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->' +
     '<div class="center sliding" id = questionTitle>Whatever Question number</div>' +
     '<div class="right">' +
@@ -83,11 +86,14 @@ var testPage =
     '<div class = "page no-swipeback" data-page="quizPage">' + // identifier for callback in framework 7
     '<div class="statusbar-overlay"></div>' +
 
-  // panel was here
+    // panel was here
 
 
     '<div class="page-content">' +
-          '<!-- Panels overlay-->' +
+
+    '<!-- Panels overlay-->' +
+
+
     '<div class="panel-overlay"></div>' +
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
@@ -113,6 +119,7 @@ var testPage =
     '</form><br>' +
 
     '</div>' +
+        
     '<p> <a href = # class= "button" id = temp> temp button</a></p>' +
     '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>' +
     '<div class="page-content">' +
@@ -131,17 +138,19 @@ var testPage =
     '</div>' +
 
 
-    '<div>' +
-
-    '</div>' +
-
     '</div>' +
     '</div>' +
 
     '</div>' +
 
 
-
+    '<div class="toolbar">' +
+    '<div class="toolbar-inner">' +
+        '<p></p>' +
+        '<label>__ out of / __</label>' +
+        '<p></p>'+
+    '</div>' +
+    '</div>' +
 
     '</div>';
 
@@ -158,12 +167,10 @@ var resultsPage =
     '<h3>Final Score</h3>' +
     '</div>' +
     '<div class="right">' +
-
-    '<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>' +
     '</div>' +
     '</div>' +
     '</div>' + // here is okay
-    '<div class = "page no-swipeback" data-page="resultsPage">' + 
+    '<div class = "page no-swipeback" data-page="resultsPage">' +
     '<div class="page-content">' + // identifier for callback in framwork 7
 
 
@@ -178,7 +185,8 @@ var resultsPage =
     '<a href="#tab2" class="tab-link button">Explanations</a>' +
     '</div>' +
     '</div>' +
-        
+
+
      //<!-- Tabs, tabs wrapper -->
      '<div class="tabs">' +
      //<!-- Tab 1, active by default -->
@@ -186,10 +194,15 @@ var resultsPage =
      '<div class="content-block">' +
      '<div id = resultTitle class="content-block-title">Your Final Score Is: </div>' +
      '<div class="content-block inset">' +
-        
+
     '<div class="content-block-inner">' +
+
+
+    '<label>' +
+
         
     '<label id = resultlbl>' +
+
     'Score will be here.' +
     'Score will be here.' +
     'Score will be here.' +
@@ -208,7 +221,9 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
+
     '<a href="#" id = home class="item-link list-button">Home</a>'+        
+
     '</li>' +
     '</ul>' +
     '</div>' +
@@ -216,14 +231,13 @@ var resultsPage =
     '</div>' +
     //<!-- Tab 2 -->
     '<div id="tab2" class="tab">' +
-    '<div id =explain class="content-block">' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-   
-   
-    '</div>' +
-   
-    '</div>';
- 
 
+   
+    '<div id =explain class="content-block">' +
+
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+
+    '</div>';

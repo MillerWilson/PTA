@@ -430,7 +430,7 @@ function checkAllAnswers()
     return score *100;
 };
 function backbutton()
-{
+{console.log(mainView.activePage.name);
     if(mainView.activePage.name == 'quizPage') //handles for quiz page
     {
       
@@ -457,7 +457,8 @@ function backbutton()
             }
             else if(mainView.activePage.name == 'resultsPage')
             {
-                mainView.router.back("home")
+                mainView.router.loadContent(homePage);
+                loadTestChoicePage();
             }
             else
             {
@@ -521,15 +522,14 @@ function populateResults()
   for(i=0, d=questionList.length; i<d;i++)
     {
         var top = document.createElement('p');
-        top.innerHTML = "Question";
+        top.innerHTML = "<b>Question</b>";
         var ans = document.createElement('p');
-        ans.innerHTML = "Correct Answer";
+        ans.innerHTML = "<b>Correct Answer</b>";
         var exp = document.createElement('p');
-        exp.innerHTML = "Explanation";
+        exp.innerHTML = "<b>Explanation</b>";
    
     
-    var htmlbreak = document.createElement('br');
-    console.log('content check A');
+        var htmlbreak = document.createElement('br');
         var quest = document.createElement('p'); 
         var correct = document.createElement('p');
         var explan = document.createElement('p');

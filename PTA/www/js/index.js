@@ -441,7 +441,7 @@ function backbutton()
     if(mainView.activePage.name == 'quizPage') //handles for quiz page
     {
       
-        myApp.confirm('Leaving now will lose all progress', 'Leaving Exam',function () 
+        myApp.confirm('Leaving now will delete all progress.', 'Leaving Exam',function () 
             {
                  mainView.router.back();
             });    

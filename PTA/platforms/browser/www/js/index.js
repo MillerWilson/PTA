@@ -233,6 +233,9 @@ function loadQuestion()
     }
     if(choiceC.value == 'undefined') // test for and hide if true/false
     {
+        console.log('This is the A value: '+ choiceA.value);
+        console.log('This is the B value: '+ choiceB.value);
+        console.log('The listed correct answer is: '+  questionList[currentQuestion].correctAnswer);
         choiceC.style.display = 'none';
         choiceC.disabled = true;
         document.getElementById('C_text').style.display = 'none';
@@ -327,6 +330,7 @@ function quizChanges()
         {
             choiceD.checked = true;
         }
+        pickerNumber = 25;
     }
    
     

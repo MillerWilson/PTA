@@ -83,11 +83,11 @@ var testPage =
     '<div class = "page no-swipeback" data-page="quizPage">' + // identifier for callback in framework 7
     '<div class="statusbar-overlay"></div>' +
 
-  // panel was here
+    // panel was here
 
 
     '<div class="page-content">' +
-          '<!-- Panels overlay-->' +
+    '<!-- Panels overlay-->' +
     '<div class="panel-overlay"></div>' +
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
@@ -113,6 +113,7 @@ var testPage =
     '</form><br>' +
 
     '</div>' +
+        
     '<p> <a href = # class= "button" id = temp> temp button</a></p>' +
     '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>' +
     '<div class="page-content">' +
@@ -131,17 +132,19 @@ var testPage =
     '</div>' +
 
 
-    '<div>' +
-
-    '</div>' +
-
     '</div>' +
     '</div>' +
 
     '</div>' +
 
 
-
+    '<div class="toolbar">' +
+    '<div class="toolbar-inner">' +
+        '<p></p>'+
+        '<label>__ out of / __</label>' +
+        '<p></p>'+
+    '</div>' +
+    '</div>' +
 
     '</div>';
 
@@ -163,7 +166,7 @@ var resultsPage =
     '</div>' +
     '</div>' +
     '</div>' + // here is okay
-    '<div class = "page no-swipeback" data-page="resultsPage">' + 
+    '<div class = "page no-swipeback" data-page="resultsPage">' +
     '<div class="page-content">' + // identifier for callback in framwork 7
 
 
@@ -178,17 +181,17 @@ var resultsPage =
     '<a href="#tab2" class="tab-link button">Explanations</a>' +
     '</div>' +
     '</div>' +
-        
-     //<!-- Tabs, tabs wrapper -->
-     '<div class="tabs">' +
-     //<!-- Tab 1, active by default -->
-     '<div id="tab1" class="tab active">' +
-     '<div class="content-block">' +
-     '<div class="content-block-title">Your Final Score Is: </div>' +
-     '<div class="content-block inset">' +
-        
+
+    //<!-- Tabs, tabs wrapper -->
+    '<div class="tabs">' +
+    //<!-- Tab 1, active by default -->
+    '<div id="tab1" class="tab active">' +
+    '<div class="content-block">' +
+    '<div class="content-block-title">Your Final Score Is: </div>' +
+    '<div class="content-block inset">' +
+
     '<div class="content-block-inner">' +
-        
+
     '<label>' +
     'Score will be here.' +
     'Score will be here.' +
@@ -208,7 +211,7 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
-    '<a href="#" class="item-link list-button">Home</a>'+        
+    '<a href="#" class="item-link list-button">Home</a>' +
     '</li>' +
     '</ul>' +
     '</div>' +
@@ -218,18 +221,16 @@ var resultsPage =
     '<div id="tab2" class="tab">' +
     '<div class="content-block">' +
     '<div class="content-block-inner">' +
-        '<label>Question goes here</label><br>' +
-        '<label>Answer will be here</label><br>' +
-        '<label>And the Explanation will be here</label>' +
-    
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-   
-   
-    '</div>' +
-   
-    '</div>';
- 
+    '<label>Question goes here</label><br>' +
+    '<label>Answer will be here</label><br>' +
+    '<label>And the Explanation will be here</label>' +
 
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+
+
+    '</div>' +
+
+    '</div>';

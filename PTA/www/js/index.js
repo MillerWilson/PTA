@@ -419,7 +419,7 @@ function checkAllAnswers()
 {
     var score = 0;
     var right = 0;
-    for(i=0;i<questionList.length;++i)
+    for(i=0, c= questionList.length;i<c;++i)
         {
             if(answerBank[i] == questionList[i].correctAnswer)
             {
@@ -511,4 +511,39 @@ function loadpanel()
     };
             
     document.getElementById('panel').appendChild(paragraph);
+};
+function populateResults()
+{
+    var top = document.createElement('p');
+    
+    var ans = document.createElement('p');
+    var exp = document.createElement('p');
+    top.innerHTML = "Question";
+    ans.innerHTML = "Correct Answer";
+    exp.innerHTML = "Explanation";
+    var htmlbreak = document.createElement('br');
+    console.log('content check A');
+
+  for(i=0, d=questionList.length; i<d;i++)
+    {
+        console.log('content check B');
+        var quest = document.createElement('p'); 
+        var correct = document.createElement('p');
+        var explan = document.createElement('p');
+       
+        quest.innerHTML = questionList[i].prompt;
+        correct.innerHTML = questionList[i].correctAnswer;
+        explan.innerHTML = questionList[i].explanation;
+            
+        document.getElementById('explain').appendChild(top);
+        document.getElementById('explain').appendChild(quest);
+        document.getElementById('explain').appendChild(ans);
+        document.getElementById('explain').appendChild(correct);
+        document.getElementById('explain').appendChild(exp);
+        document.getElementById('explain').appendChild(explan);
+        document.getElementById('explain').appendChild(br);
+       
+        
+    };   
+    
 };

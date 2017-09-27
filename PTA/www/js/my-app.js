@@ -30,8 +30,9 @@ myApp.onPageAfterAnimation("quizPage", function()
 }); 
 myApp.onPageAfterAnimation("resultsPage", function()
 {
-    loadQuestion();
-    loadpanel();    
+    console.log('content check1');
+    populateResults();  
+    console.log('content check');
     
 }); 
 

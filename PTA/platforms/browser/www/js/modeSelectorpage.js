@@ -185,6 +185,7 @@ var resultsPage =
     '<a href="#tab2" class="tab-link button">Explanations</a>' +
     '</div>' +
     '</div>' +
+<<<<<<< HEAD
 
     //<!-- Tabs, tabs wrapper -->
     '<div class="tabs">' +
@@ -194,6 +195,17 @@ var resultsPage =
     '<div class="content-block-title">Your Final Score Is: </div>' +
     '<div class="content-block inset">' +
 
+=======
+        
+     //<!-- Tabs, tabs wrapper -->
+     '<div class="tabs">' +
+     //<!-- Tab 1, active by default -->
+     '<div id="tab1" class="tab active">' +
+     '<div class="content-block">' +
+     '<div id = resultTitle class="content-block-title">Your Final Score Is: </div>' +
+     '<div class="content-block inset">' +
+        
+>>>>>>> b3b9487f577c394a827ab38ee6ba0e08aed2c968
     '<div class="content-block-inner">' +
 
     '<label>' +
@@ -223,11 +235,16 @@ var resultsPage =
     '</div>' +
     //<!-- Tab 2 -->
     '<div id="tab2" class="tab">' +
+<<<<<<< HEAD
     '<div class="content-block">' +
     '<div class="content-block-inner">' +
     '<label>Question goes here</label><br>' +
     '<label>Answer will be here</label><br>' +
     '<label>And the Explanation will be here</label>' +
+=======
+    '<div id =explain class="content-block">' +
+    '<p>This is tab 2 content</p>' +
+>>>>>>> b3b9487f577c394a827ab38ee6ba0e08aed2c968
 
     '</div>' +
     '</div>' +

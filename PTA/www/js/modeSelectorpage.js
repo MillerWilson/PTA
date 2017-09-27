@@ -88,7 +88,7 @@ var testPage =
 
     '<div class="page-content">' +
           '<!-- Panels overlay-->' +
-    //'<div class="panel-overlay"></div>' +
+    '<div class="panel-overlay"></div>' +
     '<div class="panel panel-right panel-cover">' +
     '<div id = panel class="content-block">' +
     '<br>' +
@@ -217,8 +217,12 @@ var resultsPage =
     //<!-- Tab 2 -->
     '<div id="tab2" class="tab">' +
     '<div class="content-block">' +
-    '<p>This is tab 2 content</p>' +
-
+    '<div class="content-block-inner">' +
+        '<label>Question goes here</label><br>' +
+        '<label>Answer will be here</label><br>' +
+        '<label>And the Explanation will be here</label>' +
+    
+    '</div>' +
     '</div>' +
     '</div>' +
     '</div>' +

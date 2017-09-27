@@ -221,13 +221,12 @@ var resultsPage =
     '<div class="list-block inset">' +
     '<ul>' +
     '<li>' +
-<<<<<<< HEAD:PTA/www/js/pages.js
+
     '<a href="../index.html" id = home class="item-link list-button">Home</a>'+        
-=======
+
 
     '<a href="#" id = home class="item-link list-button">Home</a>'+        
 
->>>>>>> e539fd53f858af7b33331480b708391fbfe648c7:PTA/platforms/browser/www/js/modeSelectorpage.js
     '</li>' +
     '</ul>' +
     '</div>' +
@@ -243,7 +242,7 @@ var resultsPage =
     '</div>' +
     '</div>' +
     '</div>' +
-<<<<<<< HEAD:PTA/www/js/pages.js
+
    
     '</div>';
  var homePage =   '<div class="navbar">'+
@@ -286,7 +285,6 @@ var resultsPage =
 
                     '</div>'+
                 '</div>';
-=======
->>>>>>> e539fd53f858af7b33331480b708391fbfe648c7:PTA/platforms/browser/www/js/modeSelectorpage.js
+
 
     '</div>';

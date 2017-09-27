@@ -31,6 +31,7 @@
 
         h3 {
             text-align: center;
+            text-align-last: center;
             color: black;
         }
         
@@ -42,6 +43,15 @@
        }
        li {
            text-align: center;
+           text-align-last: left;
+       }
+       .center {
+           margin:auto;
+           width: 50%;
+       }
+       li1 {
+           text-align: center;
+           text-align-last: inherit;
        }
     </style>
 
@@ -88,13 +98,13 @@
                         </div>
                         <div class="list-block">
                             <ul>
-                                <li>
+                                <li1>
                                     <center>
 
                                         <a href="#" class="close-login-screen">Continue</a>
 
                                     </center>
-                                </li>
+                                </li1>
                             </ul>
                            
                         </div>
@@ -134,10 +144,10 @@
                                     Please select the type of test that you would like to take.</h3>
                             </blockquote>
 
-
+                            
                             <div class="content-block" align="center">
                                 <!-- scrollable list, just in case more test need to be added-->
-                                <div style="height:300px;width:200px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                                <div style="height:300px;width:300px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
                                      <ul style="list-style-type:none" align="center">
                                         <li id=a+h><a href="#">Comptia A+ Hardware</a></li><br>
                                         <li id=a+s><a href="#">Comptia A+ Software</a></li><br>
@@ -149,6 +159,7 @@
 
 
                     </div>
+                
                 </div>
             </div>
 

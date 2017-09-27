@@ -246,7 +246,10 @@ var resultsPage =
 
     '</div>';
         
- var homePage =   '<div class="navbar">'+
+ var homePage = 
+     
+     
+     '<div class="navbar">'+
 
                 '<div class="navbar-inner">'+
                     '<div class="left"></div>'+
@@ -259,6 +262,41 @@ var resultsPage =
 
 
 '<div data-page="home" class="page">'+
+     
+     '<style>'+
+        'a {'+
+            'color: #ffa500;'+
+        '}'+
+
+        'body {'+
+            'background-color: rgba(0, 0, 0, 0.68);'+
+        '}'+
+
+        'h3 {'+
+            'text-align: center;'+
+            'text-align-last: center;'+
+            'color: black;'+
+        '}'+
+        
+        '.statusbar-overlay{            '+
+           'background: rgb(147, 147, 147);        '+
+        '}'+
+       'ul {'+
+           'text-align: center;'+
+       '}'+
+       'li {'+
+           'text-align: center;'+
+           'text-align-last: left;'+
+       '}'+
+       '.center {'+
+           'margin:auto;'+
+           'width: 50%;'+
+       '}'+
+       'li1 {'+
+           'text-align: center;'+
+           'text-align-last: inherit;'+
+       '}'+
+    '</style>'+
                     '<!-- Scrollable page content -->'+
                     '<div class="page-content">'+
                         '<p>'+

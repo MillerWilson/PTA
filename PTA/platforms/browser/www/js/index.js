@@ -41,7 +41,7 @@ function displayRecord(tx, results) // loads result set into the questionlist. u
  
 };
 
-function createDb()
+function createDb() // creates the database
 {
     "use strict";
     databaseHandler.createDatabase(filehandler.loadtheTestBank);
@@ -70,7 +70,7 @@ function shuffle(array) //Fisher-Yates shuffle algorithm
 
 
 
-function loadmodepage()
+function loadmodepage() // loads the quiz or test selection page
 {
     var pickerDevice = myApp.picker(
         {
@@ -108,7 +108,7 @@ function loadmodepage()
         loadtestPage(pickerDevice.value);   
     };
 };
-function loadtestPage(pick)
+function loadtestPage(pick) // loads the test page accepts the picker value
 {
     if(typeof pick == 'undefined') // check if they bothered to used the picker
     {
@@ -162,7 +162,7 @@ function previousQuestion() // moves to next question
     }
    
 };
-function assignAnswer()
+function assignAnswer() // places the answer selected in the Answer Bank
 {
             if(choiceA.checked)
             { 
@@ -190,7 +190,7 @@ function assignAnswer()
                 }
             }
 };
-function loadQuestion()
+function loadQuestion() // loads the questions  and other items to the page during the exam
 {
     document.getElementById('questionTitle').innerHTML = "Question Number "+(currentQuestion+1);
     document.getElementById('A_text').innerHTML = questionList[currentQuestion].answer1;
@@ -272,7 +272,7 @@ function loadQuestion()
         
     document.getElementById('returnLnk').onclick = backbutton;
 };
-function quizChanges()
+function quizChanges() // changes all of the items related to quiz mode
 {
     
     choiceA = document.getElementById('A');
@@ -321,28 +321,36 @@ function quizChanges()
     else
     {
         document.getElementById('submit').style.display = 'none';
+        choiceA.onclick = assignAnswer;
+        choiceB.onclick = assignAnswer;
+        choiceC.onclick = assignAnswer;
+        choiceD.onclick = assignAnswer;
         choiceALabel.onclick = function()
         {
             choiceA.checked = true;
+            assignAnswer();
         }
         choiceBLabel.onclick = function()
         {
             choiceB.checked = true;
+            assignAnswer();
         }
         choiceCLabel.onclick = function()
         {
             choiceC.checked = true;
+            assignAnswer();
         }
         choiceDLabel.onclick = function()
         {
             choiceD.checked = true;
+            assignAnswer();
         }
         pickerNumber = 25;
     }
    
     
 };
-function loadTestChoicePage()
+function loadTestChoicePage() // loads the items associated with the test choice page
 {
     document.getElementById('a+h').onclick = function()
     {
@@ -372,8 +380,9 @@ function loadTestChoicePage()
         loadmodepage();
     }; 
 };
-function highlight()
+function highlight() // changes the color depending on the correct answer selected
 {
+    assignAnswer();
     if(choiceA.checked)
     {                
         if(choiceA.value == questionList[currentQuestion].correctAnswer)
@@ -422,7 +431,7 @@ function highlight()
     }
             
 };
-function checkAllAnswers()
+function checkAllAnswers() // provides the score for the test
 {
     var score = 0;
     var right = 0;
@@ -436,7 +445,7 @@ function checkAllAnswers()
     score = right/questionList.length;
     return score *100;
 };
-function backbutton()
+function backbutton() // handles backward navigation from screens
 {
     if(mainView.activePage.name == 'quizPage') //handles for quiz page
     {
@@ -474,25 +483,24 @@ function backbutton()
         }
     }
 };
-function submitAll()
+function submitAll() // submits all of the questions from an exam
 {
     myApp.confirm('Are you sure you want to submit the test', 'Submit Exam',function () 
             {
                  loadResultsPage();
             });    
 };
-function loadResultsPage()
+function loadResultsPage() // loads the results page
 {
     mainView.router.loadContent(resultsPage);
-    //document.getElementById('results').innerHTML = 'Congratulations you made '+ checkAllAnswers()+'%';
 };
-function panelLink(para)
+function panelLink(para) // links out from the questions within the testing panel
 {
     currentQuestion = parseInt(para.id);
     loadQuestion();
     
 };
-function loadpanel()
+function loadpanel() // loads the items in the right panel
 {
    
     for(i=0, d =questionList.length; i<d;i++)
@@ -515,6 +523,19 @@ function loadpanel()
     var aTag = document.createElement('a');
     var paragraph = document.createElement('p'); 
     aTag.setAttribute('href',"#");
+    aTag.innerHTML = "Submit Exam";
+    paragraph.appendChild(aTag);  
+    paragraph.onclick = function()
+    { 
+        submitAll();
+    };
+            
+    document.getElementById('panel').appendChild(paragraph);
+    
+    
+    var aTag = document.createElement('a');
+    var paragraph = document.createElement('p'); 
+    aTag.setAttribute('href',"#");
     aTag.innerHTML = "Close Panel";
     paragraph.appendChild(aTag);  
     paragraph.onclick = function()
@@ -524,7 +545,7 @@ function loadpanel()
             
     document.getElementById('panel').appendChild(paragraph);
 };
-function populateResults()
+function populateResults() // adds the result items to the fields withinthe results page
 {
   for(i=0, d=questionList.length; i<d;i++)
     {
@@ -556,7 +577,7 @@ function populateResults()
        
         
     };   
-    var score = checkAllAnswers();
+    var score = checkAllAnswers().toPrecision(2);
     document.getElementById('resultTitle').innerHTML = 'Your final score is: '+ score;
     if (score==100)
     {

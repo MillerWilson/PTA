@@ -71,10 +71,10 @@ var testPage =
     '<div class="navbar-inner">' +
     '<div class="left">' +
     '<i class="icon icon-back"></i>' +
-    '<p id= returnLnk><a href="#"> Exit</a></p>' +
+    '<p id= returnLnk onclick = "backbutton()"><a id =returnLnk href="#"> Exit</a></p>' +
     '</div>' +
     '<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->' +
-    '<div class="center sliding" id = questionTitle>Whatever Question number</div>' +
+    '<div class="center sliding" id = questionTitle></div>' +
     '<div class="right">' +
 
     '<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>' +
@@ -109,7 +109,7 @@ var testPage =
     '<div class="content-block">' +
 
     '<!--This block contains the form for the Q' + 's & A' + 's-->' +
-    '<p id=prompt><b>Which of the following is NOT a type of motherboard expansion slot?</b> </p><br>' +
+    '<p id=prompt><b></b> </p><br>' +
     '<div class="content-block-inner">' +
     '<form>' +
     '<input type="radio" id=A name="choice" value="A"><label id= A_text></label> <br><br>' +
@@ -192,7 +192,7 @@ var resultsPage =
      //<!-- Tab 1, active by default -->
      '<div id="tab1" class="tab active">' +
      '<div class="content-block">' +
-     '<div id = resultTitle class="content-block-title">Your Final Score Is: </div>' +
+     '<div id = resultTitle class="content-block-title"></div>' +
      '<div class="content-block inset">' +
 
     '<div class="content-block-inner">' +
@@ -202,18 +202,6 @@ var resultsPage =
 
         
     '<label id = resultlbl>' +
-
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
-    'Score will be here.' +
     '</label>' +
 
     '</div>' +
@@ -255,67 +243,31 @@ var resultsPage =
                 '</div>'+
             '</div>'+
 
-
-'<div data-page="home" class="page">'+
-     
-     '<style>'+
-        'a {'+
-            'color: #ffa500;'+
-        '}'+
-
-        'body {'+
-            'background-color: rgba(0, 0, 0, 0.68);'+
-        '}'+
-
-        'h3 {'+
-            'text-align: center;'+
-            'text-align-last: center;'+
-            'color: black;'+
-        '}'+
-        
-        '.statusbar-overlay{            '+
-           'background: rgb(147, 147, 147);        '+
-        '}'+
-       'ul {'+
-           'text-align: center;'+
-       '}'+
-       'li {'+
-           'text-align: center;'+
-           'text-align-last: left;'+
-       '}'+
-       '.center {'+
-           'margin:auto;'+
-           'width: 50%;'+
-       '}'+
-       'li1 {'+
-           'text-align: center;'+
-           'text-align-last: inherit;'+
-       '}'+
-    '</style>'+
+   '<div data-page="home" class="page">'+
                     '<!-- Scrollable page content -->'+
                     '<div class="page-content">'+
                         '<p>'+
                             '&emsp;'+
 
                             '<blockquote>'+
-                                '<h3>'+
+                                '<h3 style="text-align: center;"> '+
                                     'Please select the type of test that you would like to take.</h3>'+
                             '</blockquote>'+
 
-
+                            
                             '<div class="content-block" align="center">'+
-                                '<br><br>'+
                                 '<!-- scrollable list, just in case more test need to be added-->'+
-                                '<div style="height:300px;width:200px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">'+
-                                    '<ul style="list-style-type:none" align="center">'+
-                                        '<li id=a+h><a href="#">Comptia A+ Hardware</a></li><br>'+
-                                        '<li id=a+s><a href="#">Comptia A+ Software</a></li><br>'+
-                                        '<li id=n +><a href="#">Comptia Network Security</a></li><br>'+
-                                        '<li id=s +><a href="#">Comptia Security +</a></li><br>'+
+                                '<div style="height:300px;width:300px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">'+
+                                     '<ul style="list-style-type:none" align="center">'+
+                             '<li style = "text-align: center; text-align-last: left" id=a+h><a href="#">Comptia A+ Hardware</a>'+'</li><br>'+
+                            '<li style = "text-align: center;  text-align-last: left" id=a+s><a href="#">Comptia A+ Software</a></li><br>'+
+                            '<li style = "text-align: center;  text-align-last: left" id=n +><a href="#">Comptia Network+ </a></li><br>'+
+                            '<li style = "text-align: center;  text-align-last: left" id=s +><a href="#">Comptia Security +</a></li><br>'+
                                     '</ul>'+
                                 '</div>'+
                             '</div>'+
 
 
                     '</div>'+
+                
                 '</div>';

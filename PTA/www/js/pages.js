@@ -256,14 +256,15 @@ var resultsPage =
                             '</blockquote>'+
 
                             
-                            '<div class="content-block" align="center">'+
-                                '<!-- scrollable list, just in case more test need to be added-->'+
-                                '<div style="height:300px;width:300px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">'+
-                                     '<ul style="list-style-type:none" align="center">'+
-                             '<li style = "text-align: center; text-align-last: left" id=a+h><a href="#">Comptia A+ Hardware</a>'+'</li><br>'+
-                            '<li style = "text-align: center;  text-align-last: left" id=a+s><a href="#">Comptia A+ Software</a></li><br>'+
-                            '<li style = "text-align: center;  text-align-last: left" id=n +><a href="#">Comptia Network+ </a></li><br>'+
-                            '<li style = "text-align: center;  text-align-last: left" id=s +><a href="#">Comptia Security +</a></li><br>'+
+                            '<div class="content-block inset" align="center">'+
+                                
+                                '<div class="list-block inset"><br>'+
+                                     '<ul align="center">'+
+                                         
+                                        '<li  id=a+h><br><a href="#">Comptia A+ Hardware</a></li><br>'+
+                                        '<li id=a+s><a href="#">Comptia A+ Software</a></li><br>'+
+                                        '<li  id=n +><a href="#">Comptia Network +</a></li><br>'+
+                                        '<li  id=s +><a href="#">Comptia Security +</a></li><br>'+
                                     '</ul>'+
                                 '</div>'+
                             '</div>'+

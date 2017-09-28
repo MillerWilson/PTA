@@ -263,8 +263,8 @@ var resultsPage =
                                          
                                         '<li  id=a+h><br><a href="#">Comptia A+ Hardware</a></li><br>'+
                                         '<li id=a+s><a href="#">Comptia A+ Software</a></li><br>'+
-                                        '<li  id=n +><a href="#">Comptia Network +</a></li><br>'+
-                                        '<li  id=s +><a href="#">Comptia Security +</a></li><br>'+
+                                        '<li  id=n ><a href="#">Comptia Network +</a></li><br>'+
+                                        '<li  id=s ><a href="#">Comptia Security +</a></li><br>'+
                                     '</ul>'+
                                 '</div>'+
                             '</div>'+

@@ -28,6 +28,9 @@ myApp.onPageAfterAnimation("quizPage", function()
     loadpanel();    
     
 }); 
+
+
+
 myApp.onPageAfterAnimation("resultsPage", function()
 {
     populateResults();  

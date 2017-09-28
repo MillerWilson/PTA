@@ -585,11 +585,11 @@ function populateResults() // adds the result items to the fields withinthe resu
     }
     else if(score>80)
     {
-        document.getElementById('resultlbl').innerHTML = "That's a really impressive score you may be ready soon.";
+        document.getElementById('resultlbl').innerHTML = "That's a really impressive score! You may be ready to take the test soon.";
     }
     else if(score>50)
     {
-        document.getElementById('resultlbl').innerHTML = "Before taking the test be sure to study more.";
+        document.getElementById('resultlbl').innerHTML = "Before taking the test, be sure to study more.";
     }
     else
     {

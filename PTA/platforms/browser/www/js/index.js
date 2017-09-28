@@ -263,7 +263,7 @@ function loadQuestion() // loads the questions  and other items to the page duri
    document.getElementById('qlbl').innerHTML = "Question "+(currentQuestion+1)+" out of "+ questionList.length;
     if (currentQuestion+1 == questionList.length)
     {
-        document.getElementById('temp').style.display = 'inline';        
+        document.getElementById('temp').style.display = '';        
     }
     else
     {
@@ -450,7 +450,7 @@ function backbutton() // handles backward navigation from screens
     if(mainView.activePage.name == 'quizPage') //handles for quiz page
     {
       
-        myApp.confirm('Leaving now will lose all progress', 'Leaving Exam',function () 
+        myApp.confirm('Leaving now will delete all progress.', 'Leaving Exam',function () 
             {
                  mainView.router.back();
             });    
@@ -485,7 +485,7 @@ function backbutton() // handles backward navigation from screens
 };
 function submitAll() // submits all of the questions from an exam
 {
-    myApp.confirm('Are you sure you want to submit the test', 'Submit Exam',function () 
+    myApp.confirm('Are you sure you want to submit the test?', 'Submit Exam',function () 
             {
                  loadResultsPage();
             });    
@@ -577,8 +577,8 @@ function populateResults() // adds the result items to the fields withinthe resu
        
         
     };   
-    var score = checkAllAnswers().toPrecision(2);
-    document.getElementById('resultTitle').innerHTML = 'Your final score is: '+ score;
+    var score = checkAllAnswers();
+    document.getElementById('resultTitle').innerHTML = 'Your final score is: '+ score.toFixed(2);
     if (score==100)
     {
         document.getElementById('resultlbl').innerHTML = 'Congrats on the perfect score!!!!';

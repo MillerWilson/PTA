@@ -120,7 +120,7 @@ var testPage =
 
     '</div>' +
         
-    '<p> <a href = # class= "button button-big" id = temp> Submit </a></p>' +
+    '<p> <a href = # class= "button active" id = temp> Submit </a></p>' +
     '<p> <a href="#" class="button" id = submit>Submit Answer</a></p>' +
     '<div class="page-content">' +
 
@@ -227,6 +227,7 @@ var resultsPage =
     '</div>' +
     '</div>' +
     '</div>' +
+
     '</div>';
         
  var homePage = 
@@ -269,5 +270,7 @@ var resultsPage =
 
 
                     '</div>'+
+
                 
                 '</div>';
+

@@ -1,1 +1,0 @@
-Document.getElementById("bob").text = "Aasdfa";

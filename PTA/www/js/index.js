@@ -452,7 +452,7 @@ function backbutton() // handles backward navigation from screens
       
         myApp.confirm('Leaving now will delete all progress.', 'Leaving Exam',function () 
             {
-                mainView.router.back();
+                 mainView.router.back();
             });    
     }
     else

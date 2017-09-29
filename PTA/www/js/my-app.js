@@ -26,6 +26,8 @@ myApp.onPageAfterAnimation("quizPage", function()
 {
     loadQuestion();
     loadpanel();    
+    loadpanel();  
+    
     
 }); 
 

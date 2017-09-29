@@ -25,7 +25,6 @@ $$(document).on('deviceready', function ()
 myApp.onPageAfterAnimation("quizPage", function()
 {
     loadQuestion();
-    loadpanel();    
     loadpanel();  
     
     
